@@ -17,12 +17,14 @@ SOURCES += main.cpp\
     game.cpp \
     player.cpp \
     user.cpp \
-    board.cpp
+    board.cpp \
+    guiboard.cpp
 
 HEADERS  += mainwindow.h \
     game.h \
     player.h \
     user.h \
-    board.h
+    board.h \
+    guiboard.h
 
 FORMS    += mainwindow.ui

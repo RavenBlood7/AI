@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>724</width>
+    <width>758</width>
     <height>433</height>
    </rect>
   </property>
@@ -20,20 +20,24 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../Projects/Project1/build-BaoGame-Desktop-Debug/Raven-on-red.png</normaloff>../../../Projects/Project1/build-BaoGame-Desktop-Debug/Raven-on-red.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(&quot;table.jpg&quot;)</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QWidget" name="wgtTable" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>671</width>
+      <width>721</width>
       <height>351</height>
      </rect>
     </property>
-    <widget class="QWidget" name="widget_2" native="true">
+    <widget class="QWidget" name="wgtBoard" native="true">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -45,7 +49,7 @@
      <property name="styleSheet">
       <string notr="true">background-image: url(&quot;index2.jpeg&quot;);</string>
      </property>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn00">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -74,7 +78,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn03">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -103,7 +107,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn02">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -132,7 +136,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="btn01">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -161,7 +165,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="btn06">
       <property name="geometry">
        <rect>
         <x>390</x>
@@ -190,7 +194,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="btn05">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -219,7 +223,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="btn04">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -248,7 +252,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_8">
+     <widget class="QPushButton" name="btn07">
       <property name="geometry">
        <rect>
         <x>440</x>
@@ -277,7 +281,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_9">
+     <widget class="QPushButton" name="btn10">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -306,7 +310,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_10">
+     <widget class="QPushButton" name="btn16">
       <property name="geometry">
        <rect>
         <x>390</x>
@@ -335,7 +339,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_11">
+     <widget class="QPushButton" name="btn15">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -364,7 +368,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_12">
+     <widget class="QPushButton" name="btn14">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -393,7 +397,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_13">
+     <widget class="QPushButton" name="btn17">
       <property name="geometry">
        <rect>
         <x>440</x>
@@ -422,7 +426,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_14">
+     <widget class="QPushButton" name="btn12">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -451,7 +455,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_15">
+     <widget class="QPushButton" name="btn13">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -480,7 +484,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_16">
+     <widget class="QPushButton" name="btn11">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -509,7 +513,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_17">
+     <widget class="QPushButton" name="btn26">
       <property name="geometry">
        <rect>
         <x>390</x>
@@ -538,7 +542,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_18">
+     <widget class="QPushButton" name="btn20">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -567,7 +571,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_19">
+     <widget class="QPushButton" name="btn23">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -596,7 +600,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_20">
+     <widget class="QPushButton" name="btn27">
       <property name="geometry">
        <rect>
         <x>440</x>
@@ -625,7 +629,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_21">
+     <widget class="QPushButton" name="btn24">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -654,7 +658,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_22">
+     <widget class="QPushButton" name="btn22">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -683,7 +687,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_23">
+     <widget class="QPushButton" name="btn21">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -712,7 +716,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_24">
+     <widget class="QPushButton" name="btn25">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -741,7 +745,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_25">
+     <widget class="QPushButton" name="btn34">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -770,7 +774,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_26">
+     <widget class="QPushButton" name="btn36">
       <property name="geometry">
        <rect>
         <x>390</x>
@@ -799,7 +803,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_27">
+     <widget class="QPushButton" name="btn35">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -828,7 +832,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_28">
+     <widget class="QPushButton" name="btn37">
       <property name="geometry">
        <rect>
         <x>440</x>
@@ -857,7 +861,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_29">
+     <widget class="QPushButton" name="btn30">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -886,7 +890,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_30">
+     <widget class="QPushButton" name="btn33">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -915,7 +919,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_31">
+     <widget class="QPushButton" name="btn31">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -944,7 +948,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_32">
+     <widget class="QPushButton" name="btn32">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -973,31 +977,102 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
+     <zorder>btn23</zorder>
+     <zorder>btn00</zorder>
+     <zorder>btn03</zorder>
+     <zorder>btn02</zorder>
+     <zorder>btn01</zorder>
+     <zorder>btn06</zorder>
+     <zorder>btn05</zorder>
+     <zorder>btn04</zorder>
+     <zorder>btn07</zorder>
+     <zorder>btn10</zorder>
+     <zorder>btn16</zorder>
+     <zorder>btn15</zorder>
+     <zorder>btn14</zorder>
+     <zorder>btn17</zorder>
+     <zorder>btn12</zorder>
+     <zorder>btn13</zorder>
+     <zorder>btn11</zorder>
+     <zorder>btn26</zorder>
+     <zorder>btn20</zorder>
+     <zorder>btn27</zorder>
+     <zorder>btn24</zorder>
+     <zorder>btn22</zorder>
+     <zorder>btn21</zorder>
+     <zorder>btn25</zorder>
+     <zorder>btn34</zorder>
+     <zorder>btn36</zorder>
+     <zorder>btn35</zorder>
+     <zorder>btn37</zorder>
+     <zorder>btn30</zorder>
+     <zorder>btn33</zorder>
+     <zorder>btn31</zorder>
+     <zorder>btn32</zorder>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="lblP2Stack">
      <property name="geometry">
       <rect>
        <x>290</x>
        <y>20</y>
-       <width>111</width>
+       <width>31</width>
        <height>17</height>
       </rect>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>22</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="lblP1Stack">
      <property name="geometry">
       <rect>
        <x>290</x>
        <y>320</y>
-       <width>111</width>
+       <width>61</width>
        <height>17</height>
       </rect>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>22</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnLeft">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>31</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnRight">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>130</y>
+       <width>31</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblHand">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>170</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
      </property>
     </widget>
    </widget>
@@ -1007,8 +1082,8 @@ color: white;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>724</width>
-     <height>26</height>
+     <width>758</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1021,14 +1096,6 @@ color: white;</string>
     <addaction name="actionNew"/>
    </widget>
    <addaction name="menuFile"/>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">

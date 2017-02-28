@@ -21,6 +21,9 @@ public:
 
 	bool enterSeed(int row, int col, bool clockwise);
 
+	bool isTakasa();
+	bool isTakasaNyumba();
+	bool enterTakasaSeed(int row, int col, bool clockwise);
 ///////////
 	void print();
 

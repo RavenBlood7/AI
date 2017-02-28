@@ -18,10 +18,13 @@ Board::Board()
 		}
 	}
 	
-	board[2][4] = 5;
-	board[2][3] = 17;
-	board[1][4] = 1;
-	board[1][3] = 1;
+	board[1][3] = 6;
+	board[2][4] = 6;
+	
+	board[1][1] = 2;
+	board[1][2] = 2;
+	board[2][5] = 2;
+	board[2][6] = 2;	
 }
 
 bool Board::sow(int & row, int & col, bool clockwise, int hand)
@@ -38,7 +41,7 @@ bool Board::sow(int & row, int & col, bool clockwise, int hand)
 	cout << "just sowed: " << row << "," << col << endl;	
 	cout << "\thand is: " << hand << endl;	
 	cout << "\tboard[row][col] is: " << board[row][col] << endl;	
-	print();
+	//print();
 	while (hand)
 	{		    
 		if (row == topRow)
@@ -61,7 +64,7 @@ bool Board::sow(int & row, int & col, bool clockwise, int hand)
 	cout << "just sowed: " << row << "," << col << endl;	
 	cout << "\thand is: " << hand << endl;	
 	cout << "\tboard[row][col] is: " << board[row][col] << endl;
-	print();
+	//print();
 	}
 ///////////////////remove this	
 	//cout << "last row: " << row << endl;
@@ -178,6 +181,74 @@ bool Board::enterSeed(int row, int col, bool clockwise)
 
 		}
 		if (!endMove) hand = capture(row, col);
+	}
+	return true;
+}
+
+bool Board::isTakasa()
+{
+	for (int i = 0; i < 8; i++)
+	{
+		if (board[1][i] != 0 && board[2][i] != 0)
+			return false;
+	}
+	return true;
+}
+
+bool Board::isTakasaNyumba()
+{
+	if (!isTakasa) return false;
+	//have to make it for both players
+	//for (int i = 0; i < 8; i++)
+	//{
+	//	if (board[][])
+	//		return false;
+	//}
+	return true;
+}
+
+bool Board::enterTakasaSeed(int row, int col, bool clockwise)
+{
+	if (board[row][col] < 2) return false;
+	//enter in row, col
+	board[row][col]++;
+	bool emptyHole = false;
+	int hand = 0;
+	
+	//while not in empty hole	
+	while (!emptyHole)
+	{
+		//pick up in row, col
+		hand = take(row, col);
+		//get next hole
+		if (row % 2 == 0)	//top row
+		{
+			if (clockwise)
+				col++;
+			else col--;				
+		}
+		else			//bottom row
+		{
+			if (clockwise)
+				col--;
+			else col++;				
+		}
+		if (col == 8)
+		{
+			if (clockwise)
+				row++;
+			else row--;
+			col = 7;
+		}
+		else if (col == -1)
+		{
+			if (clockwise)
+				row--;
+			else row++;
+			col = 0;				
+		}		
+		//sow in correct direction
+		emptyHole = sow(row,col, clockwise, hand);
 	}
 	return true;
 }
