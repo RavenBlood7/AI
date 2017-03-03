@@ -193,3 +193,8 @@ void MainWindow::on_btn37_clicked()
 {
     game.setCurData(3, 7);
 }
+
+void MainWindow::on_actionNew_triggered()
+{
+    game.initialize(ui->wgtTable);
+}

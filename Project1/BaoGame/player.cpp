@@ -16,7 +16,7 @@ bool Player::play(int row, int col, bool direction, Board *board) //returns true
     //if Namua
         //if takasa
         bool clockwise;
-        if (playerNumber = 1)
+        if (playerNumber == 1)
         {
             if (direction == 1)
                 clockwise = board->CLOCKWISE;

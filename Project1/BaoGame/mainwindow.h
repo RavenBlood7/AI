@@ -87,6 +87,8 @@ private slots:
 
     void on_btn37_clicked();
 
+    void on_actionNew_triggered();
+
 private:
     Ui::MainWindow *ui;
     Game game;
