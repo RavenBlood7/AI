@@ -8,7 +8,7 @@ using namespace std;
 Board::Board()
 {
 	stack1 = stack2 = 22;
-	isNamua = true;
+    isNamuaVar = true;
 	
 	for (int i = 0; i < 4; i++)
 	{
@@ -82,7 +82,6 @@ int Board::take(int row, int col)
 }
 
 int Board::capture(int row, int col)
-
 {	int oppRow;	
 	row == 1? oppRow = 2 : oppRow = 1;
 	if (board[oppRow][col] == 0 || (row == 0) || (row == 3))
@@ -99,7 +98,7 @@ bool Board::enterSeed(int row, int col, bool clockwise)
 	board[row][col]++;
 	row > 1? stack1-- : stack2--;
 	if (stack1 == 0 && stack2 == 0)
-		isNamua = false;
+        isNamuaVar = false;
 	//if stack is zero go into mtaji
 	bool endMove = false;
 	while (!endMove)
@@ -254,6 +253,26 @@ bool Board::enterTakasaSeed(int row, int col, bool clockwise)
 	return true;
 }
 
+bool Board::isNamua()
+{
+    return !((stack1 == 0)&&(stack2 == 0));
+}
+
+bool Board::isLosingPosition()
+{
+    bool lost1 = true;
+   for (int i = 0; i < 8; i++)
+       if (board[1][i] != 0)
+           lost1 = false;
+
+   bool lost2 = true;
+   for (int i = 0; i < 8; i++)
+       if (board[2][i] != 0)
+           lost2 = false;
+
+   return lost1 || lost2;
+}
+
 void Board::print()
 {
 	cout << "The Board:" << endl;
@@ -267,3 +286,4 @@ void Board::print()
 	}	
 	cout << "\n";
 }
+

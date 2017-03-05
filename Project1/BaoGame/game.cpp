@@ -28,6 +28,7 @@ void Game::initialize(QWidget *w)
 
     board = new GUIBoard(w);
     board->print();
+    board->possibleMoves(board->PLAYER1);
 }
 
 void Game::playGame()
@@ -50,5 +51,10 @@ void Game::sendData(bool direction) //0 for left and 1 for right
         if (curPlayer == player1)
             curPlayer = player2;
         else curPlayer = player1;
+    }
+    else
+    {
+
+        ////output curPlayer has lost
     }
 }

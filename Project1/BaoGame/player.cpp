@@ -38,8 +38,14 @@ bool Player::play(int row, int col, bool direction, Board *board) //returns true
             board->enterSeed(row, col, clockwise);
         }
 
+        bool player;
+        if(playerNumber == 1)
+            player = board->PLAYER2;
+        else player = board->PLAYER1;
+        board->possibleMoves(player);
+        return !board->isLosingPosition();  //returns true/success if did not lose
         //////////////////////remove
-                   board->print();
+        //           board->print();
         //if takasa and house
     //if Mtaji
 

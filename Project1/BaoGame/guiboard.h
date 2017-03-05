@@ -25,6 +25,14 @@ public:
 
     void setButton(int row, int col, int val);
     void setHand(int val);
+
+    int capture(int row, int col);
+    int take(int row, int col);
+
+    void disableAll();
+    void disableButton(int row, int col);
+    void enableButton(int row, int col);
+    void possibleMoves(bool player);
 };
 
 #endif // GUIBOARD_H
