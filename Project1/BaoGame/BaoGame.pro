@@ -18,13 +18,21 @@ SOURCES += main.cpp\
     player.cpp \
     user.cpp \
     board.cpp \
-    guiboard.cpp
+    guiboard.cpp \
+    aiplayer.cpp \
+    gametree.cpp \
+    state.cpp \
+    move.cpp
 
 HEADERS  += mainwindow.h \
     game.h \
     player.h \
     user.h \
     board.h \
-    guiboard.h
+    guiboard.h \
+    aiplayer.h \
+    gametree.h \
+    state.h \
+    move.h
 
 FORMS    += mainwindow.ui

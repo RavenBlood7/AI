@@ -16,7 +16,8 @@ public:
     static const bool ANTICLOCKWISE = false;
     static const bool PLAYER1 = false;
     static const bool PLAYER2= true;
-//functions
+
+    //functions
     Board();
     virtual bool sow(int & row, int & col, bool clockwise, int hand);
     virtual int take(int row, int col);
@@ -28,7 +29,7 @@ public:
 	bool isTakasaNyumba();
     virtual bool enterTakasaSeed(int row, int col, bool clockwise);
     bool isNamua();
-///////////
+
     virtual	void print();
     virtual void possibleMoves(bool player) = 0 ;
 
