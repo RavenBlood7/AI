@@ -1,7 +1,6 @@
 #include "board.h"
 #include <iostream>
-/**@class Board
-*/
+
 using namespace std;
 
 
@@ -11,20 +10,27 @@ Board::Board()
     isNamuaVar = true;
 	
 	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 8; j++)
-		{
-			board[i][j] = 0;
-		}
-	}
-	
+        for (int j = 0; j < 8; j++)
+            board[i][j] = 0;
+
 	board[1][3] = 6;
-	board[2][4] = 6;
-	
+	board[2][4] = 6;	
 	board[1][1] = 2;
 	board[1][2] = 2;
 	board[2][5] = 2;
 	board[2][6] = 2;	
+}
+
+
+Board::Board(const Board &other)
+{
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < 8; j++)
+            this->board[i][j] = other.board[i][j];
+
+    this->stack1 = other.stack1;
+    this->stack2 = other.stack2;
+    this->isNamuaVar = other.isNamuaVar;
 }
 
 bool Board::sow(int & row, int & col, bool clockwise, int hand)
@@ -37,11 +43,6 @@ bool Board::sow(int & row, int & col, bool clockwise, int hand)
 	board[row][col]++;
 	hand--;	
 
-///////////////////remove this	
-	cout << "just sowed: " << row << "," << col << endl;	
-	cout << "\thand is: " << hand << endl;	
-	cout << "\tboard[row][col] is: " << board[row][col] << endl;	
-	//print();
 	while (hand)
 	{		    
 		if (row == topRow)
@@ -59,19 +60,9 @@ bool Board::sow(int & row, int & col, bool clockwise, int hand)
 			clockwise? row = topRow : row = topRow + 1;
 		}		
 		board[row][col]++;
-		hand--;	
-///////////////////remove this	
-	cout << "just sowed: " << row << "," << col << endl;	
-	cout << "\thand is: " << hand << endl;	
-	cout << "\tboard[row][col] is: " << board[row][col] << endl;
-	//print();
-	}
-///////////////////remove this	
-	//cout << "last row: " << row << endl;
-//	cout << "last col: " << col << endl;  
-	cout << "in sow : " << board[row][col] << endl;  
-    return board[row][col] == 1;
-    
+        hand--;
+    }
+    return board[row][col] == 1;    
 }
 
 int Board::take(int row, int col)
@@ -106,17 +97,7 @@ bool Board::enterSeed(int row, int col, bool clockwise)
 		
 		if (hand == -1)
 		{
-			hand = take(row, col);
-			/*
-			//get the next hole
-			if (col == 0 && row % 2 == 1)//in bottom row
-				clockwise? row-- : row++;
-			else if (col == 7 && row % 2 == 0)
-				clockwise? row++ : row--;
-			else if (row % 2 == 0) 	//then it is in top row				
-				clockwise ? col++ : col--;
-			else clockwise ? col-- : col++;//it is in the bottom row
-			*/
+            hand = take(row, col);
 			if (row % 2 == 0)	//top row
 			{
 				if (clockwise)
@@ -142,12 +123,8 @@ bool Board::enterSeed(int row, int col, bool clockwise)
 					row--;
 				else row++;
 				col = 0;				
-			}
-				
-///////////////////remove this	
-//	cout << "here0: " << row << col << endl;				
-			endMove = sow(row, col, clockwise, hand);
-			//if (!endMove) hand = capture(row, col);			
+            }
+            endMove = sow(row, col, clockwise, hand);
 		}
 		else
 		{
@@ -155,25 +132,17 @@ bool Board::enterSeed(int row, int col, bool clockwise)
 			{
 				if (row > 1)	//player 1
 					clockwise? col = 0 : col = 7;
-				else clockwise? col = 7 : col = 0;	
-///////////////////remove this	
-//	cout << "here1: " << row << col << endl;				
+                else clockwise? col = 7 : col = 0;
 			}
 			else if (col <= 1)
 			{
 				col = 0;
 				row > 1? clockwise = CLOCKWISE : clockwise = ANTICLOCKWISE;
-
-///////////////////remove this	
-//	cout << "here2: " << row << endl;								
 			}
 			else if (col >= 6)
 			{
 				col = 7;
 				row > 1? clockwise = ANTICLOCKWISE : clockwise = CLOCKWISE;				
-
-///////////////////remove this	
-//	cout << "here3: " << row << endl;								
 			}
 			endMove = sow(row, col, clockwise, hand);
 			
@@ -210,6 +179,7 @@ bool Board::enterTakasaSeed(int row, int col, bool clockwise)
 {
 	if (board[row][col] < 2) return false;
     row > 1? stack1-- : stack2--;
+
 	//enter in row, col
 	board[row][col]++;
 	bool emptyHole = false;
