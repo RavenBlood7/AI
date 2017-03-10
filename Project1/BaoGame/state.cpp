@@ -6,15 +6,9 @@ State::State()
 }
 
 
-State::State(const Board &other)
+State::State(const Board &other) : Board(other)
 {
-    for (int i = 0; i < 4; i++)
-        for (int j = 0; j < 8; j++)
-            this->board[i][j] = other.board[i][j];
 
-    this->stack1 = other.stack1;
-    this->stack2 = other.stack2;
-    this->isNamuaVar = other.isNamuaVar;
 }
 
 int State::evaluate()
