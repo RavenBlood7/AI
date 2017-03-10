@@ -3,6 +3,7 @@
 
 #include "board.h"
 #include <vector>
+using namespace std;    //for vector
 
 class State : public Board
 {
