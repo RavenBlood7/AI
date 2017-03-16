@@ -1,25 +1,17 @@
+#include "gametree.h"
 #include "board.h"
 #include <iostream>
 
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
-	Board b1;
-	b1.print();
+	Board b;
+	GameTree* gt = new GameTree(&b, b.PLAYER1, 3);
+	gt->makeBestMove(&b);
+	cout << "==========================" << endl;
+	gt->print();
 	
-	b1.enterTakasaSeed(2, 5, b1.CLOCKWISE);
-	b1.print();
+	delete gt;
 	
-	b1.enterTakasaSeed(1, 1, b1.CLOCKWISE);
-	b1.print();
-	
-	b1.enterTakasaSeed(2, 6, b1.ANTICLOCKWISE);
-	b1.print();
-	
-	b1.enterSeed(1, 3, b1.ANTICLOCKWISE);
-	b1.print();
-	
-
-	return 0;
 }

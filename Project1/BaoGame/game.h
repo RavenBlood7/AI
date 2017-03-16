@@ -23,10 +23,10 @@
 class Game
 {
 private:
-    Player* player1;
-    Player* player2;
-    Player* curPlayer;  /**< the player whose turn it is*/
-    Board* board;       /**< the board shared between players*/
+    Player* player1 = NULL;
+    Player* player2 = NULL;
+    Player* curPlayer = NULL;  /**< the player whose turn it is*/
+    GUIBoard* board;       /**< the board shared between players*/
     int curRow, curCol; /**< the current row and column being accessed before sent to the player for processing*/
 
 public:
@@ -34,7 +34,11 @@ public:
     ~Game();
 
     void initialize(QWidget *w); /**< Sets the game to it's initial state*/
-    void playGame();
+    void initPvsP(QWidget *w);
+    void initPvsAI(QWidget *w);
+    void initAIvsAI(QWidget *w);
+
+    void playAIvAI();
 
     void setCurData(int curRow, int curCol);    /**< a means of setting current row and col*/
     /**

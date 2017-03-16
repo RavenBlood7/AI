@@ -17,6 +17,7 @@
 
 #include "player.h"
 #include "gametree.h"
+#include "guiboard.h"
 
 class AIPlayer : public Player
 {
@@ -25,6 +26,8 @@ private:
     int plyDepth; /**< The depth to which this particular AI can search*/
 public:
     AIPlayer();
+    AIPlayer(int playerNum, int plyDepth);
+    bool takeTurn(GUIBoard *board);
 };
 
 #endif // AIPLAYER_H

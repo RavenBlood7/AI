@@ -31,10 +31,51 @@ void Game::initialize(QWidget *w)
     board->possibleMoves(board->PLAYER1);
 }
 
-void Game::playGame()
+void Game::initPvsP(QWidget *w)
 {
-    // while (player1->takeTurn(board) && player2->takeTurn(board))
-    //{}
+    if (player1 != NULL) delete player1;
+    if (player2 != NULL) delete player2;
+    if (board != NULL) delete board;
+
+    player1 = new User(1);
+    player2 = new User(2);
+    curPlayer = player1;
+
+    board = new GUIBoard(w);
+    board->print();
+    board->possibleMoves(board->PLAYER1);
+}
+
+void Game::initPvsAI(QWidget *w)
+{
+
+}
+
+void Game::initAIvsAI(QWidget *w)
+{
+    if (player1 == NULL) delete player1;
+    if (player2 == NULL) delete player2;
+    if (board == NULL) delete board;
+
+    //get plydepth of each AI player
+
+    player1 = new AIPlayer(1, 1);
+    player2 = new AIPlayer(2, 1);
+    curPlayer = player1;
+
+    board = new GUIBoard(w);
+    board->print();
+    (board)->disableAll();
+    playAIvAI();
+}
+
+void Game::playAIvAI()
+{
+    while (true)
+    {
+        if (!((AIPlayer*) player1)->takeTurn(board)) break;
+        if (!((AIPlayer*) player2)->takeTurn(board)) break;
+    }
 }
 
 void Game::setCurData(int curRow, int curCol)

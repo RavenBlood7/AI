@@ -1501,14 +1501,32 @@ color: white;</string>
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionNew"/>
+    <widget class="QMenu" name="menuNew">
+     <property name="title">
+      <string>New</string>
+     </property>
+     <addaction name="actionPlayer_vs_Player"/>
+     <addaction name="actionPlayer_vs_AI"/>
+     <addaction name="actionAI_vs_AI"/>
+    </widget>
+    <addaction name="menuNew"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionNew">
+  <action name="actionPlayer_vs_Player">
    <property name="text">
-    <string>New</string>
+    <string>Player vs Player</string>
+   </property>
+  </action>
+  <action name="actionPlayer_vs_AI">
+   <property name="text">
+    <string>Player vs AI</string>
+   </property>
+  </action>
+  <action name="actionAI_vs_AI">
+   <property name="text">
+    <string>AI vs AI</string>
    </property>
   </action>
  </widget>

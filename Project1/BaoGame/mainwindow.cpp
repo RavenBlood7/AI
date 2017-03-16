@@ -198,3 +198,18 @@ void MainWindow::on_actionNew_triggered()
 {
     game.initialize(ui->wgtTable);
 }
+
+void MainWindow::on_actionAI_vs_AI_triggered()
+{
+    game.initAIvsAI(ui->wgtTable);
+}
+
+void MainWindow::on_actionPlayer_vs_AI_triggered()
+{
+    game.initPvsAI(ui->wgtTable);
+}
+
+void MainWindow::on_actionPlayer_vs_Player_triggered()
+{
+    game.initPvsP(ui->wgtTable);
+}

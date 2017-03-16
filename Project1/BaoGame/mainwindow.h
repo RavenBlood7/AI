@@ -89,6 +89,12 @@ private slots:
 
     void on_actionNew_triggered();
 
+    void on_actionAI_vs_AI_triggered();
+
+    void on_actionPlayer_vs_AI_triggered();
+
+    void on_actionPlayer_vs_Player_triggered();
+
 private:
     Ui::MainWindow *ui;
     Game game;

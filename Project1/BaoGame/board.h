@@ -39,15 +39,17 @@ public:
 
     virtual bool enterSeed(int row, int col, bool clockwise);   /**< Namua entering a seed functionality*/
     virtual bool enterTakasaSeed(int row, int col, bool clockwise); /**< Namua Takasa situation functionality*/
+    virtual bool makeMtajiMove(int row, int col, int clockwise);
 
+    bool isMtajiMove(int row, int col, int clockwise);
     bool isTakasa();        /**< returns true if no captures are possible*/
     bool isTakasaNyumba();  /**< returns true if in Takasa and landed in house*/
     bool isNamua();         /**< returns true if there are still seeds left off the board*/
     bool isLosingPosition();/**< returns true if a player has lost the game*/
+    bool isEmpty(int row, int col);
 
     virtual	void print();   /**< outputs the board and stack variables*/
-    virtual void possibleMoves(bool player) = 0; /**< find out which moves are possible with regards to player*/
-
+    virtual void possibleMoves(bool player) {}; /**< find out which moves are possible with regards to player*/
 
 };
 

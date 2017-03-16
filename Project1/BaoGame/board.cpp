@@ -223,6 +223,83 @@ bool Board::enterTakasaSeed(int row, int col, bool clockwise)
 	return true;
 }
 
+bool Board::makeMtajiMove(int row, int col, int clockwise)
+{
+    /*
+    if (isTakasa())
+    {
+        board[row][col]--;
+        enterTakasaSeed(row, col, clockwise);
+        stack1++;
+        stack2++;
+        return true;
+    }
+    else
+    {
+        if (!isMtajiMove(row, col, clockwise)) return false;
+        board[row][col]--;
+        enterSeed(row, col, clockwise);
+        stack1++;
+        stack2++;
+        return true;
+    }
+    */
+}
+
+bool Board::isMtajiMove(int row, int col, int clockwise)
+{
+    /*
+ //   if (!isNamua() && isTakasa()) return true;
+
+    Board* tmpBoard = new Board(this);
+    bool emptyHole = false;
+    int hand = 0;
+
+    //pick up in row, col
+    hand = tmpBoard.take(row, col);
+    //get next hole
+    if (row % 2 == 0)	//top row
+    {
+        if (clockwise)
+            col++;
+        else col--;
+    }
+    else			//bottom row
+    {
+        if (clockwise)
+            col--;
+        else col++;
+    }
+    if (col == 8)
+    {
+        if (clockwise)
+            row++;
+        else row--;
+        col = 7;
+    }
+    else if (col == -1)
+    {
+        if (clockwise)
+            row--;
+        else row++;
+        col = 0;
+    }
+    //sow in correct direction
+    emptyHole = tmpBoard.sow(row,col, clockwise, hand);
+
+    if (!emptyHole && tmpBoard->capture(row, col) != -1);
+    {
+        delete tmpBoard;
+        return true;
+    }
+    else
+    {
+        delete tmpBoard;
+        return false;
+    }
+    */
+}
+
 bool Board::isNamua()
 {
     return !((stack1 == 0)&&(stack2 == 0));
@@ -241,6 +318,13 @@ bool Board::isLosingPosition()
            lost2 = false;
 
    return lost1 || lost2;
+
+   //@todo make for mtaji
+}
+
+ bool Board::isEmpty(int row, int col)
+{
+	return (board[row][col] == 0);
 }
 
 void Board::print()
