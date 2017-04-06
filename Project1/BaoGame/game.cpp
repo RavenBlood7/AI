@@ -59,7 +59,7 @@ void Game::initAIvsAI(QWidget *w)
 
     //get plydepth of each AI player
 
-    player1 = new AIPlayer(1, 1);
+    player1 = new AIPlayer(1, 3);
     player2 = new AIPlayer(2, 1);
     curPlayer = player1;
 
