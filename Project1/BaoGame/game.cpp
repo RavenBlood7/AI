@@ -3,6 +3,8 @@
 Game::Game()
 {
     //initialize();
+    curCol = 0;
+    curRow = 0;
 }
 
 
@@ -33,6 +35,7 @@ void Game::initialize(QWidget *w)
 
 void Game::initPvsP(QWidget *w)
 {
+    PvsAI = false;
     if (player1 != NULL) delete player1;
     if (player2 != NULL) delete player2;
     if (board != NULL) delete board;
@@ -46,21 +49,35 @@ void Game::initPvsP(QWidget *w)
     board->possibleMoves(board->PLAYER1);
 }
 
-void Game::initPvsAI(QWidget *w)
+void Game::initPvsAI(QWidget *w, int plyDepth)
 {
-
-}
-
-void Game::initAIvsAI(QWidget *w)
-{
+    PvsAI = true;
     if (player1 == NULL) delete player1;
     if (player2 == NULL) delete player2;
     if (board == NULL) delete board;
 
     //get plydepth of each AI player
 
-    player1 = new AIPlayer(1, 3);
-    player2 = new AIPlayer(2, 1);
+    player1 = new User(1);
+    player2 = new AIPlayer(2, plyDepth);
+    curPlayer = player1;
+
+    board = new GUIBoard(w);
+    board->print();
+    board->possibleMoves(board->PLAYER1);
+}
+
+void Game::initAIvsAI(QWidget *w, int plyDepth1, int plyDepth2)
+{
+    PvsAI = false;
+    if (player1 == NULL) delete player1;
+    if (player2 == NULL) delete player2;
+    if (board == NULL) delete board;
+
+    //get plydepth of each AI player
+
+    player1 = new AIPlayer(1, plyDepth1);
+    player2 = new AIPlayer(2, plyDepth2);
     curPlayer = player1;
 
     board = new GUIBoard(w);
@@ -86,16 +103,28 @@ void Game::setCurData(int curRow, int curCol)
 
 void Game::sendData(bool direction) //0 for left and 1 for right
 {
-    if (curPlayer->play(curRow, curCol, direction, board))
+    if (!PvsAI)
     {
-        //change player
-        if (curPlayer == player1)
-            curPlayer = player2;
-        else curPlayer = player1;
+        if (curPlayer->play(curRow, curCol, direction, board))
+        {
+            //change player
+            if (curPlayer == player1)
+                curPlayer = player2;
+            else curPlayer = player1;
+        }
     }
-    else
+    else //player vs AI
     {
+        if (player1->play(curRow, curCol, direction, board))
+        {
+            //let AI play
+            ((AIPlayer*)player2)->takeTurn(board);
+            board->possibleMoves(board->PLAYER1);
+        }
+    }
+}
 
-        ////output curPlayer has lost
-    }
+bool Game::isPvAI()
+{
+    return PvsAI;
 }

@@ -26,6 +26,7 @@ public:
 
     Player();
     Player(int playerNumber);
+    virtual ~Player() {};
     //virtual bool takeTurn(Board *) {}; //returns false if the player loses
     virtual bool play(int row, int col, bool direction, Board *board); //0 for left and 1 for right
 };

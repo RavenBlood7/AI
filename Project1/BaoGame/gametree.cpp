@@ -15,7 +15,7 @@ GameTree::GameTree(Board* board, bool player, int plyDepth)
 	if (plyDepth > 5) plyDepth = 5;	//limit max plydepth!
 	this->root = new State(*board, player);
 	this->player = player;
-	maxDepth = plyDepth;
+    maxDepth = plyDepth*2 + 1;
 }
 
  GameTree::~GameTree()
@@ -194,38 +194,25 @@ State* GameTree::getNextState(State* state, Move* move)
 
 int GameTree::alphaBetaPruning(State* cur, int curDepth)
 {
-///////////////////////////////
-//cout << "in abpruning: start: depth " << curDepth << endl;
+//used for displaying tree
 	for (int i = 0; i < curDepth; i++)
 	cout << "\t\t";
 	cout << "depth " << curDepth << ": ";
 	cur->print();
-//////////////////////////////	
+
 	if (curDepth == maxDepth)
-	{
-		///////////////////////////////
-//cout << "in abpruning: (curDepth == maxDepth) " << curDepth << endl;
+    {
 		cur->evaluation = cur->evaluate(player);
 		return cur->evaluate(player);
-	}
-	
-	//initialize alphaBeta value
-
-///////////////////////////////
-//cout << "in abpruning: before isMaxNode" << endl;			
+    }
 	
 	if (cur->isMaxNode) cur->evaluation = -101;
-	else cur->evaluation = 101;
-
-///////////////////////////////
-//cout << "in abpruning: before isMaxNode" << endl;				
+    else cur->evaluation = 101;
 	
 	//generate list of moves
 	vector<Move* >* moves = getPossibleMoves(cur);
 	int tmp;
-	bool prune;
-///////////////////////////////
-//cout << "in abpruning: just made all children " << curDepth << endl;	
+    bool prune;
 	
 	//for every move
 	for (int i = 0; i < moves->size(); i++)
@@ -236,19 +223,15 @@ int GameTree::alphaBetaPruning(State* cur, int curDepth)
 		//add current alphaBeta value to stack
 		if (cur->isMaxNode) 
 		{
-			alphaValues.push_back(cur->evaluation);
-///////////////////////////////
-//cout << "\tin abpruning: push to alpha: " << cur->evaluation<< endl;								
+            alphaValues.push_back(cur->evaluation);
 		}
 		else 
 		{
-			betaValues.push_back(cur->evaluation);
-///////////////////////////////
-//cout << "\tin abpruning: push to alpha: " << cur->evaluation<< endl;											
+            betaValues.push_back(cur->evaluation);
 		}
-		
-		//tmp = alphaBetPruning(children.at(i));
-		tmp = alphaBetaPruning(cur->children[i], curDepth + 1);//////////////////////////////////////////////////////////////////recursive call over here
+
+        //recursive call
+        tmp = alphaBetaPruning(cur->children[i], curDepth + 1);
 		
 		//cur.alphaBeta value = max or min (tmp, cur.alphaBetaValue)
 		if (cur->isMaxNode)
@@ -269,15 +252,11 @@ int GameTree::alphaBetaPruning(State* cur, int curDepth)
 		//remove current alphaBeta value from stack
 		if (cur->isMaxNode) 
 		{
-			alphaValues.pop_back();	
-///////////////////////////////
-//cout << "\tin abpruning: pop from alpha: " << cur->evaluation<< endl;											
+            alphaValues.pop_back();
 		}
 		else 
 		{
-			betaValues.pop_back();
-///////////////////////////////
-//cout << "\tin abpruning: pop from alpha: " << cur->evaluation<< endl;											
+            betaValues.pop_back();
 		}
 		
 		//if (prune) delete moves and return temp
@@ -286,8 +265,8 @@ int GameTree::alphaBetaPruning(State* cur, int curDepth)
 			for (int i = 0; i < moves->size(); i++)
 				delete (*moves)[i];
 			delete moves;
-///////////////////////////////
-cout << "in abpruning: decidet to prune because of " << tmp << endl;			
+            //give status of pruning
+            cout << "in abpruning: decided to prune because of " << tmp << endl;
 			return tmp;
 		}
 	}
@@ -295,10 +274,7 @@ cout << "in abpruning: decidet to prune because of " << tmp << endl;
 	for (int i = 0; i < moves->size(); i++)
 		delete (*moves)[i];
 	delete moves;
-	
-	//return cur.aplhaBetaValue
-///////////////////////////////
-//cout << "in abpruning: end depth " << curDepth << endl;	
+
 	return cur->evaluation;
 }
 

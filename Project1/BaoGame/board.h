@@ -36,6 +36,7 @@ public:
 
     Board();
     Board(const Board &other); /**< Copy constructor*/
+    virtual ~Board(){ };
 
     virtual bool enterSeed(int row, int col, bool clockwise);   /**< Namua entering a seed functionality*/
     virtual bool enterTakasaSeed(int row, int col, bool clockwise); /**< Namua Takasa situation functionality*/
@@ -49,7 +50,7 @@ public:
     bool isEmpty(int row, int col);
 
     virtual	void print();   /**< outputs the board and stack variables*/
-    virtual void possibleMoves(bool player) {}; /**< find out which moves are possible with regards to player*/
+    virtual void possibleMoves(bool player) {if (player){}}; /**< find out which moves are possible with regards to player*/
 
 };
 

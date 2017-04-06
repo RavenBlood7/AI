@@ -28,6 +28,7 @@ private:
     Player* curPlayer = NULL;  /**< the player whose turn it is*/
     GUIBoard* board;       /**< the board shared between players*/
     int curRow, curCol; /**< the current row and column being accessed before sent to the player for processing*/
+    bool PvsAI;/**< boolean of whether game is Player vs AI. A special case*/
 
 public:
     Game();
@@ -35,8 +36,8 @@ public:
 
     void initialize(QWidget *w); /**< Sets the game to it's initial state*/
     void initPvsP(QWidget *w);
-    void initPvsAI(QWidget *w);
-    void initAIvsAI(QWidget *w);
+    void initPvsAI(QWidget *w, int plyDepth);
+    void initAIvsAI(QWidget *w, int plyDepth1, int plyDepth2);
 
     void playAIvAI();
 
@@ -46,6 +47,7 @@ public:
     * @param direction 0 for left and 1 for right as indicated in Board's constants
     */
     void sendData(bool direction);
+    bool isPvAI(); /**< used for AISettings. To display two AIs or just one*/
 };
 
 #endif // GAME_H

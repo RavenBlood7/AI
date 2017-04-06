@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "game.h"
+#include "aisettings.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,8 +18,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_label_3_linkActivated(const QString &link);
-
     void on_btn12_clicked();
 
     void on_btnRight_clicked();
@@ -97,7 +96,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Game game;
+    AISettings* AIS;
+    Game* game;
 };
 
 #endif // MAINWINDOW_H
