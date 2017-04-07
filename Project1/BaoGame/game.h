@@ -35,11 +35,11 @@ public:
     ~Game();
 
     void initialize(QWidget *w); /**< Sets the game to it's initial state*/
-    void initPvsP(QWidget *w);
-    void initPvsAI(QWidget *w, int plyDepth);
-    void initAIvsAI(QWidget *w, int plyDepth1, int plyDepth2);
+    void initPvsP(QWidget *w); /**< Sets up the game for Player vs Player*/
+    void initPvsAI(QWidget *w, int plyDepth); /**< Sets up the game for Player vs AI*/
+    void initAIvsAI(QWidget *w, int plyDepth1, int plyDepth2); /**< Sets up the game for AI vs AI*/
 
-    void playAIvAI();
+    void playAIvAI(); /**< starts the game for AI vs AI*/
 
     void setCurData(int curRow, int curCol);    /**< a means of setting current row and col*/
     /**
@@ -48,6 +48,7 @@ public:
     */
     void sendData(bool direction);
     bool isPvAI(); /**< used for AISettings. To display two AIs or just one*/
+    void setPvAI(bool x);
 };
 
 #endif // GAME_H

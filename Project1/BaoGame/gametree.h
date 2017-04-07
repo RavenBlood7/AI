@@ -26,27 +26,27 @@ class GameTree
     State* root;
     bool player;
     int maxDepth;
-    vector<int> alphaValues;
-    vector<int> betaValues;
+    vector<int> alphaValues;/**< an array to store all the previous alpha values*/
+    vector<int> betaValues; /**< an array to store all the previous beta values*/
 	
-    bool compareAlpha(int x);
-    bool compareBeta(int x);
+    bool compareAlpha(int x);/**< compares a value to all the previous alpha values*/
+    bool compareBeta(int x);/**< compares a value to all the previous beta values*/
 
 public:
     GameTree();
     GameTree(Board* board, bool player, int plyDepth);
     ~GameTree();
-    void destroy(State * root);
+    void destroy(State * root);/**< deletes all nodes to avoid memory leaks*/
 
     //to interact with AIPlayer
     Move makeBestMove(GUIBoard* board);/**< the umbrella function which is the interface to external classes*/
 
     vector<Move*>*  getPossibleMoves(State* state);/**< generates list of possible moves based on current state*/
     State* getNextState(State* state, Move* move); /**< based on current state and a move, makes next state*/
-    int alphaBetaPruning(State* cur, int curDepth);
+    int alphaBetaPruning(State* cur, int curDepth);/**< explanations are in comments in the function itself*/
 
-// for testing purposes
-    void print();
+// for display purposes
+    void print();/**< prints the tree as evaluation numbers in a breadth first fashion*/
 };
 
 #endif // GAMETREE_H

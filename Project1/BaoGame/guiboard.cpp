@@ -44,6 +44,16 @@ void GUIBoard::print()
 
 bool GUIBoard::sow(int & row, int & col, bool clockwise, int hand)
 {
+    if (isLosingPosition())
+    {
+        int winner;
+        if (row > 1)
+            winner = 1;
+        else winner = 2;
+        QLabel* win= widget->findChild<QLabel*>("lblWinner");
+        win->setText(QString::fromStdString("WINNER!") + QString::number(winner));
+        return false;
+    }
     print();
     setHand(hand);
     qApp->processEvents();
@@ -105,8 +115,6 @@ bool GUIBoard::sow(int & row, int & col, bool clockwise, int hand)
 void GUIBoard::setButton(int row, int col, int val)
 {
     QWidget* wgtBoard = widget->findChild<QWidget*>("wgtBoard");
-//    if (wgtBoard)
- //   {
         stringstream find;
         find << "btn" << row << col;
         QPushButton* btn = wgtBoard->findChild<QPushButton*>(QString::fromStdString(find.str()));
@@ -115,20 +123,14 @@ void GUIBoard::setButton(int row, int col, int val)
             btn->setText(QString::number(val));            
             btn->setStyleSheet("background: blue; border: none; outline: none; color: white; max-width:41px; max-height:41px; min-width:41px; min-height:41px; border-radius:20px;");
         }
-        ///////////
- //             else cout << "button error" << endl;
- //   }
-    ///////////
- //         else cout << "wgtBoard error" << endl;
+      else cout << "wgtBoard error" << endl;
 }
 
 void GUIBoard::setHand(int val)
 {
       QLabel* guiHand = widget->findChild<QLabel*>("lblHand");
-     // if (guiHand)
-          guiHand->setText(QString::number(val));
-///////////
-     // else cout << "hand error" << endl;
+      guiHand->setText(QString::number(val));
+
 }
 
 int GUIBoard::capture(int row, int col)

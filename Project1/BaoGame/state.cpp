@@ -19,20 +19,20 @@ int State::evaluate(bool player)
 	{
 		if (favouredPlayer == player)
 			return 100;
-		else return -100; 
+        else return 0;
 	}
 	
 	//weights
-	const float countSeedWeight = 30.0/100;
-	const float frontRowWeight = 20.0/100;
-	const float backRowWeight= 10.0/100;
-	const float frontRowOccWeight = 15.0/100;
-	const float backRowOccWeight= 5.0/100;
-	const float captureWeight = 20.0/100;
+    const float countSeedWeight = 30.0;
+    const float frontRowWeight = 20.0;
+    const float backRowWeight= 10.0;
+    const float frontRowOccWeight = 15.0;
+    const float backRowOccWeight= 5.0;
+    const float captureWeight = 20.0;
 	
 	
 	//count seeds for each player
-	int countSeed;
+    float countSeed;
 	int p1 = 0;
 	for (int i = 0; i < 8; i++)
 	{
@@ -43,12 +43,12 @@ int State::evaluate(bool player)
 	{
 		p2 += board[0][i] + board[1][i];
 	}
-	if (player == PLAYER1) countSeed = (p1 - p2);
-	else countSeed = (p2 - p1);
+    if (player == PLAYER1) countSeed = 1.0 * (p1 / (p1 + p2));
+    else countSeed = 1.0 * (p2 / (p1 + p2));
 	
 	//count seeds in front rows and back rows respectively
-	int frontRow;
-	int backRow;
+    float frontRow;
+    float backRow;
 	p1 =0;
 	int p1b = 0;
 	for (int i = 0; i < 8; i++)
@@ -65,18 +65,20 @@ int State::evaluate(bool player)
 	}
 	if (player == PLAYER1) 
 	{
-		frontRow = p1 - p2;
-		backRow = p1b - p2b;
+        frontRow = 1.0 * (p1 / (p1 + p2));
+        if (p1b + p2b != 0) backRow = 1.0 * (p1b / (p1b + p2b));
+        else backRow = 0.5;
 	}
 	else 
 	{
-		frontRow = p2 - p1;
-		backRow = p2b - p1b;
+        frontRow = 1.0 * (p2 / (p1 + p2));
+        if (p1b + p2b != 0) backRow = 1.0 * (p2b / (p1b + p2b));
+        else backRow = 0.5;
 	}		
 	
 	//count how many holes are occupied in back row and front rows
-	int frontRowOcc;
-	int backRowOcc;
+    float frontRowOcc;
+    float backRowOcc;
 	p1 =0;
 	p1b = 0;
 	for (int i = 0; i < 8; i++)
@@ -93,29 +95,32 @@ int State::evaluate(bool player)
 	}	
 	if (player == PLAYER1) 
 	{
-		frontRowOcc = p1 - p2;
-		backRowOcc = p1b - p2b;
+        frontRowOcc = 1.0 * (p1 / 8);
+        backRowOcc =1.0 * (p1b / 8);
 	}
 	else 
 	{
-		frontRowOcc = p2 - p1;
-		backRowOcc = p2b - p1b;
+        frontRowOcc = 1.0 * (p2 / 8);
+        backRowOcc = 1.0 * (p2b / 8);
 	}	
 	
 	//count the number of seeds each player can capture
-	int capture = 0;
-	p1 =0;
-	p2 = 0;
-	for (int i = 0; i < 8; i++)
-	{
-		if (board[2][i] != 0 && board[1][i])
-		{
-			p1 += board[1][i];
-			p2 += board[2][i];
-		}
-	}
-	if (player == PLAYER1) capture = p1 - p2;
-	else capture = p2 - p1;
+    float capture = 0.5;
+    if (!isTakasa())
+    {
+        p1 =0;
+        p2 = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            if (board[2][i] != 0 && board[1][i] != 0)
+            {
+                p1 += board[1][i];
+                p2 += board[2][i];
+            }
+        }
+        if (player == PLAYER1) capture = 1.0 * (p1 / (p1 + p2));
+        else capture = 1.0 * (p2 / (p1 + p2));
+    }
 	
 	//return weighted sum
 	return countSeedWeight * countSeed

@@ -152,9 +152,7 @@ vector<Move*>* GameTree::getPossibleMoves(State* state)
 			}
 		}	
 	}
-	//@todo mtaji moves
-///////////////////////////////
-//cout << "in getPosMoves: end " << endl;		
+    //@todo mtaji moves
 	return moves;
 }
 

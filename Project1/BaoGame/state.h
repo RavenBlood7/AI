@@ -22,17 +22,17 @@ using namespace std;    //for vector
 class State : public Board
 {
 private:
-    bool favouredPlayer;
+    bool favouredPlayer;  /**< used in evaluation function*/
 
 public:
-    vector<State*> children;
-    int evaluation;
-    bool isMaxNode; //if it is not a max node then it is a min node
+    vector<State*> children;  /**< reference to further states*/
+    int evaluation;  /**< a variable that keeps the evaluated value. Also used as alpha/beta value of node*/
+    bool isMaxNode;  /**< shows whether node is min or max node*/
 
     State();
     State(const Board &other, bool player);
-    int evaluate(bool player);
-    bool getPlayer();
+    int evaluate(bool player); /**< evaluates the state of the board with regards to a player*/
+    bool getPlayer();  /**< returns the favouredPlayer variable*/
 
  //   void possibleMoves() {};
 };

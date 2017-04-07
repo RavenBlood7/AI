@@ -44,8 +44,7 @@ bool Player::play(int row, int col, bool direction, Board *board) //returns true
         else player = board->PLAYER1;
         board->possibleMoves(player);
         return !board->isLosingPosition();  //returns true/success if did not lose
-        //////////////////////remove
-        //           board->print();
+
         //if takasa and house
     //if Mtaji
 

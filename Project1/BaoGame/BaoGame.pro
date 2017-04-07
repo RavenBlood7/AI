@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     aiplayer.cpp \
     gametree.cpp \
     state.cpp \
-    move.cpp
+    move.cpp \
+    aisettings.cpp
 
 HEADERS  += mainwindow.h \
     game.h \
@@ -33,6 +34,8 @@ HEADERS  += mainwindow.h \
     aiplayer.h \
     gametree.h \
     state.h \
-    move.h
+    move.h \
+    aisettings.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    aisettings.ui

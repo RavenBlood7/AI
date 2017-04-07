@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
     game->initialize(ui->wgtTable);
+    ui->lblWinner->setText("");
 }
 
 MainWindow::~MainWindow()
@@ -195,6 +196,9 @@ void MainWindow::on_actionNew_triggered()
 
 void MainWindow::on_actionAI_vs_AI_triggered()
 {
+    ui->lblWinner->setText("");
+    game->setPvAI(false);
+
     AIS = new AISettings();
     AIS->setGame(game, ui->wgtTable);
     AIS->show();
@@ -204,6 +208,9 @@ void MainWindow::on_actionAI_vs_AI_triggered()
 
 void MainWindow::on_actionPlayer_vs_AI_triggered()
 {
+    ui->lblWinner->setText("");
+    game->setPvAI(true);
+
     AIS = new AISettings();
     AIS->setGame(game, ui->wgtTable);
     AIS->show();
@@ -212,5 +219,7 @@ void MainWindow::on_actionPlayer_vs_AI_triggered()
 
 void MainWindow::on_actionPlayer_vs_Player_triggered()
 {
+    ui->lblWinner->setText("");
+    game->setPvAI(false);
     game->initPvsP(ui->wgtTable);
 }

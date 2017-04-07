@@ -128,3 +128,8 @@ bool Game::isPvAI()
 {
     return PvsAI;
 }
+
+void Game::setPvAI(bool x)
+{
+    PvsAI = x;
+}
