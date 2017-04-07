@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.2.12)  7 APR 2017 11:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.2.12)  7 APR 2017 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -741,77 +741,87 @@ File: fullUML.jpg Graphic file (type jpg)
 Package pdftex.def Info: fullUML.jpg used on input line 18.
 (pdftex.def)             Requested size: 351.31378pt x 239.30714pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--44
+Underfull \hbox (badness 10000) in paragraph at lines 29--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--44
+Underfull \hbox (badness 10000) in paragraph at lines 29--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--44
+Underfull \hbox (badness 10000) in paragraph at lines 29--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--44
+Underfull \hbox (badness 10000) in paragraph at lines 29--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--62
+Underfull \hbox (badness 10000) in paragraph at lines 29--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--62
+Underfull \hbox (badness 10000) in paragraph at lines 29--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--62
+Underfull \hbox (badness 10000) in paragraph at lines 52--68
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--62
+Underfull \hbox (badness 10000) in paragraph at lines 52--68
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--62
+Underfull \hbox (badness 10000) in paragraph at lines 52--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--68
 
  []
 
 [2 <./fullUML.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 92.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 107.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 113.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 107.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 113.
  [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 206--218
+Underfull \hbox (badness 10000) in paragraph at lines 212--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--218
+Underfull \hbox (badness 10000) in paragraph at lines 212--224
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
@@ -841,7 +851,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--374
+Underfull \hbox (badness 10000) in paragraph at lines 371--380
 
  []
 
@@ -865,7 +875,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--382
+Underfull \hbox (badness 10000) in paragraph at lines 381--388
 
  []
 
@@ -886,7 +896,7 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on project.pdf (9 pages, 349463 bytes).
+Output written on project.pdf (9 pages, 349510 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
