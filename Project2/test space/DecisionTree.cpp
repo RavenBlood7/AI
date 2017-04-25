@@ -9,6 +9,7 @@ DecisionTree::DecisionTree(string specFile, string dataFile)
 DecisionTree::~DecisionTree()
 {
 	delete root;
+	delete testSet;
 	delete structure;
 }
 
@@ -22,6 +23,7 @@ void DecisionTree::initializeRoot(string dataFile)
 	
 	if (inFile.is_open())
 	{
+		//place all data in root set
 		while (getline(inFile, line))
 		{
 			tempStream.clear();
@@ -33,6 +35,16 @@ void DecisionTree::initializeRoot(string dataFile)
 			}
 			root->addCase(tempVec);
 			tempVec.clear();
+		}
+		//randomize data
+		root->randomize();
+		
+		//place top  30% in test set
+		testSet = new DTreeNode();
+		int trainNum = 0.3 * root->getSize();
+		for (int i = 0; i < trainNum; i++)
+		{
+			testSet->addCase(root->popCase());
 		}
 	}
 	else
@@ -46,12 +58,14 @@ string DecisionTree::toString()
 {
 	string ret = "The decision tree:\n";
 	ret += "Structure:\n" + structure->toString();
-	ret += root->toString();
+	ret += "Test Set:\n" + testSet->toString();
+	ret += "Root:\n" + root->toString();
+
 	return ret;
 	
 }
 
 string DecisionTree::toFile(string outFile)
 {
-	
+	return "garbage-for-now";
 }

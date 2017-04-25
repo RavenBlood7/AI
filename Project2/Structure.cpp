@@ -94,6 +94,17 @@ vector<string> Structure::getAttributeValues(string attribute)
 	}
 }
 
+int Structure::getIndex(string attribute)
+{
+	for (int i = 0; i < numAttributes; i++)
+	{
+		if (attributeList.at(i) == attribute)
+			return i;
+	}	
+	return -1;
+}
+
+
 string Structure::toString()
 {	
 	string ret = "class name: " + className + "\n";

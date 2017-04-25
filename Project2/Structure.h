@@ -43,6 +43,7 @@ class Structure
 		vector<string> getClassValues();
 		vector<string> getAttributes();
 		vector<string> getAttributeValues(string attribute);
+		int getIndex(string attribute);
 	
 		string toString();			/**< For displaying purposes*/
 	

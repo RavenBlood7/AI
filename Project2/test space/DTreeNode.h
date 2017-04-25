@@ -16,7 +16,9 @@
 #define DTREE_NODE
 
 #include <vector>
+#include <list>
 #include <iostream>
+#include <algorithm> //for random_shuffle
 
 using namespace std;
 
@@ -24,20 +26,24 @@ class DTreeNode
 {
 	private:
 		string description;
-		vector<DTreeNode*>* children;
-		vector< vector<string> > set;
+		vector<DTreeNode*>* children = NULL;
+		list< vector<string> > set;
 
 	public:
 		DTreeNode();
 		~DTreeNode();
 		
-		vector<DTreeNode>* getChildren();
+		vector<DTreeNode*>* getChildren();
 		
-		void split(string attribute);
+		void split(string attr, int index, vector<string> attributes);
 	
 		void addCase(vector<string> newCase);
 	
+		vector<string> popCase();
+		void randomize();
+	
 		bool isLeaf();
+		int getSize();
 	
 		string toString();
 };
