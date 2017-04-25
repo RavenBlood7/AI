@@ -94,6 +94,31 @@ int DTreeNode::getSize()
 	return set.size();
 }
 
+void DTreeNode::setDescription(string description)
+{
+	this->description = description;
+}
+
+string DTreeNode::getDescription()
+{
+	return description;
+}
+
+bool DTreeNode::multipleClasses()
+{
+	bool multiple = false;
+	string tempClass = set.front().back(); 	//the class value of the first case
+	for (list<vector<string> >::iterator it = set.begin(); it != set.end(); it++)
+	{
+		if (it->back() != tempClass)
+		{
+			multiple = true;
+			break;
+		}
+	}	
+	return multiple;
+}
+
 string DTreeNode::toString()
 {	
 	string ret = "The data:\n";

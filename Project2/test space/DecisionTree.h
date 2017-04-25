@@ -36,9 +36,9 @@ class DecisionTree
 		DecisionTree(string specFile, string dataFile);
 		virtual ~DecisionTree();
 		
-	//	virtual void induceNoMissing() = 0;
-	//	virtual void induceWithMissing() = 0;
-	//	virtual void prune() = 0;
+		virtual void induceNoMissing() = 0;
+		virtual void induceWithMissing() = 0;
+		virtual void prune() = 0;
 	
 		string toString();
 		string toFile(string outFile);	

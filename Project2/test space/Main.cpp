@@ -1,16 +1,16 @@
 #include <iostream>
-#include "DecisionTree.h"
+#include "DiscreteDT.h"
 
 using namespace std;
 
 
 int main(int argc, char *argv[])
 {
-	DecisionTree *dt = new DecisionTree("tic-tac-toe.spec", "out.data");
+	DecisionTree *dt = new DiscreteDT("tic-tac-toe.spec", "out.data");
 	cout << dt->toString() << endl;
 	///////////////
-	cout << "Now splitting!" << endl;
-	dt->toFile("asdf");
+	cout << "inducing -d" << endl;
+	dt->induceNoMissing();
 	cout << dt->toString() << endl;
 	delete dt;
 	

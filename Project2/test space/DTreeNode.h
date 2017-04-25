@@ -44,8 +44,14 @@ class DTreeNode
 	
 		bool isLeaf();
 		int getSize();
+		void setDescription(string description);
+		string getDescription();
+	
+		bool multipleClasses();
 	
 		string toString();
+	
+
 };
 
 #endif
