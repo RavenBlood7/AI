@@ -36,6 +36,7 @@ class Structure
 	public:
 		Structure(string specFile); 	/**< Constructor that disects the file and creates the object*/
 		
+		string getClassName(); 
 		int getNumClassValues(); 
 		int getNumAttributes();
 		int getNumAttributeValues(string attribute);
@@ -44,6 +45,7 @@ class Structure
 		vector<string> getAttributes();
 		vector<string> getAttributeValues(string attribute);
 		int getIndex(string attribute);
+		string getAttribute(int index);
 	
 		string toString();			/**< For displaying purposes*/
 	

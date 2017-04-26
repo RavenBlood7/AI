@@ -30,6 +30,7 @@ class DecisionTree
 		DTreeNode* root;
 		DTreeNode* testSet;
 		Structure* structure;
+		vector<DTreeNode*> displayStack;
 
 		void initializeRoot(string dataFile);	
 	public:
@@ -41,6 +42,7 @@ class DecisionTree
 		virtual void prune() = 0;
 	
 		string toString();
+		string toString(DTreeNode* node);
 		string toFile(string outFile);	
 };
 

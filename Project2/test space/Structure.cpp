@@ -55,6 +55,11 @@ Structure::Structure(string specFile)
 	}				
 }
 
+string Structure::getClassName()
+{
+	return className;
+}
+
 int Structure::getNumClassValues()
 {
 	return numClassValues;
@@ -104,6 +109,11 @@ int Structure::getIndex(string attribute)
 	return -1;
 }
 
+
+string Structure::getAttribute(int index)
+{
+	return attributeList.at(index);
+}
 
 string Structure::toString()
 {	
