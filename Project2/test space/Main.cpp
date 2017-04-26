@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	DecisionTree *dt = new DiscreteDT("krkopt.spec", "krkopt.data");
+	DecisionTree *dt = new DiscreteDT("example.spec", "example.data");
 	cout << dt->toString() << endl;
 	///////////////
 	cout << "inducing -d\n\n          \t-----\t\n\n" << endl;

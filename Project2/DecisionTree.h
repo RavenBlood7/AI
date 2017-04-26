@@ -30,17 +30,19 @@ class DecisionTree
 		DTreeNode* root;
 		DTreeNode* testSet;
 		Structure* structure;
+		vector<DTreeNode*> displayStack;
 
 		void initializeRoot(string dataFile);	
 	public:
 		DecisionTree(string specFile, string dataFile);
 		virtual ~DecisionTree();
 		
-	//	virtual void induceNoMissing() = 0;
-	//	virtual void induceWithMissing() = 0;
-	//	virtual void prune() = 0;
+		virtual void induceNoMissing() = 0;
+		virtual void induceWithMissing() = 0;
+		virtual void prune() = 0;
 	
 		string toString();
+		string toString(DTreeNode* node);
 		string toFile(string outFile);	
 };
 

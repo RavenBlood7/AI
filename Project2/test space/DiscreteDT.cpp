@@ -8,10 +8,10 @@ DiscreteDT::DiscreteDT(string specFile, string dataFile) : DecisionTree(specFile
 void DiscreteDT::induceNoMissing()
 {
 /////////////////////////////
-cout << "in DT induceNoMissing: " << endl;	
+//cout << "in DT induceNoMissing: " << endl;	
 	divideAndConquer(root);
 /////////////////////////////
-cout << "out DT induceNoMissing: " << endl;	
+//cout << "out DT induceNoMissing: " << endl;	
 }
 
 void DiscreteDT::induceWithMissing()
@@ -32,6 +32,7 @@ void DiscreteDT::divideAndConquer(DTreeNode *node)
 	//check if T is empty
 	if (node->getSize() == 0)
 	{
+		node->setSplitAttr(structure->getClassValues().at(rand() % structure->getNumClassValues()));
 		//assign class
 		return;
 	}
@@ -57,8 +58,8 @@ void DiscreteDT::divideAndConquer(DTreeNode *node)
 			//add information gain	
 			gain = informationGain(node, structure->getAttribute(i));
 /////////////////////////////
-cout << "\t\tinfo gain on: "<< structure->getAttribute(i) << endl;							
-cout << "\t\t#info gain: "<< gain << endl;				
+//cout << "\t\tinfo gain on: "<< structure->getAttribute(i) << endl;							
+//cout << "\t\t#info gain: "<< gain << endl;				
 			
 			infoGain.push_back(gain);
 		}	
@@ -81,6 +82,11 @@ cout << "\t\t#info gain: "<< gain << endl;
 		}			
 		
 		//split on that attribute
+/////////////////////////////
+cout << "split on: " << structure->getAttribute(index) << endl;			
+cout << "\tbecause of maximum info gain: " << max << endl;			
+cout << "\tnode: " << node->toString() << endl;	
+		if (max == 0) return;
 		node->split(structure->getAttribute(index), index, structure->getAttributeValues(structure->getAttribute(index)));
 	}
 	//call recursively
@@ -96,7 +102,7 @@ cout << "\t\t#info gain: "<< gain << endl;
 //cout << "##################calling root child child one "<< root->getChildren()->at(0)->getChildren()->at(0)->toString()<< endl;
 //divideAndConquer(root->getChildren()->at(0)->getChildren()->at(0));	
 	
-cout << "out DT divAndC: " << endl;			
+//cout << "out DT divAndC: " << endl;			
 }
 
 float DiscreteDT::informationGain(DTreeNode *node, string attribute)

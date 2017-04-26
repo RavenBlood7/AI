@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath>	//for log2
+#include <cstdlib>	//for rand
 #include "DecisionTree.h"
 
 using namespace std;

@@ -25,13 +25,19 @@ vector<DTreeNode*>* DTreeNode::getChildren()
 
 void DTreeNode::split(string attr, int index, vector<string> attributeValues)
 {
-	description = attr;
+/////////////////////////////
+//cout << "\t--in Node split: " << attr << endl;		
+//cout << "\t\t index: " << index << endl;	
+	splitAttr = attr;
 	//create new children according to attributeValues
 	children = new vector<DTreeNode*>();
 	int size = attributeValues.size();
 	for (int i = 0; i < size; i++)
 	{
 		children->push_back(new DTreeNode());
+		children->at(i)->attr = attr;
+		children->at(i)->relop = '=';
+		children->at(i)->value = attributeValues.at(i);
 	}		
 
 	//divide up set	
@@ -48,7 +54,9 @@ void DTreeNode::split(string attr, int index, vector<string> attributeValues)
 				break;
 			}
 		}
-	}		
+	}	
+/////////////////////////////
+//cout << "\t--out Node split: " << attr << endl;			
 }
 
 void DTreeNode::addCase(vector<string> newCase)
@@ -84,6 +92,11 @@ void DTreeNode::randomize()
 	}		
 }
 
+void DTreeNode::setSplitAttr(string split)
+{
+	splitAttr = split;
+}
+
 bool DTreeNode::isLeaf()
 {
 	return (children == NULL);
@@ -94,9 +107,76 @@ int DTreeNode::getSize()
 	return set.size();
 }
 
+void DTreeNode::setValue(string value)
+{
+	this->value = value;
+}
+
+string DTreeNode::getValue()
+{
+	return value;
+}
+
+string DTreeNode::getClass(int index)
+{
+	if (!set.empty())
+		return set.front().at(index);
+	else return splitAttr;
+}
+
+bool DTreeNode::multipleClasses()
+{
+	bool multiple = false;
+	string tempClass = set.front().back(); 	//the class value of the first case
+	for (list<vector<string> >::iterator it = set.begin(); it != set.end(); it++)
+	{
+		if (it->back() != tempClass)
+		{
+			multiple = true;
+			break;
+		}
+	}	
+	return multiple;
+}
+
+int DTreeNode::frequency(int index, string value)
+{
+
+/////////////////////////////
+//cout << "in freq: " << index << endl;		
+//cout << "in freq: " << value << endl;		
+	int total = 0;
+	for (list<vector<string> >::iterator it = set.begin(); it != set.end(); it++)
+	{
+/////////////////////////////
+//cout << "in freq: in fo" << index << endl;				
+		if (it->at(index) == value)
+			total++;
+	}	
+/////////////////////////////
+//cout << "out freq: " << total << endl;			
+	return total;
+}
+
+DTreeNode* DTreeNode::subset(int index, string value)
+{
+	DTreeNode* subset = new DTreeNode();
+	vector<string> tempVec;
+	for (list<vector<string> >::iterator it = set.begin(); it != set.end(); it++)
+	{
+		if (it->at(index) == value)
+		{
+			tempVec = *it;	//might be shallow copy
+			subset->addCase(tempVec);
+		}
+	}		
+	return subset;
+}
+
 string DTreeNode::toString()
-{	
-	string ret = "The data:\n";
+{
+	return "( " + attr + " " + relop + " " + value + " )";
+	string ret;// = "The data:\n";
 	if (!set.empty())
 		for (list<vector<string> >::iterator it = set.begin(); it != set.end(); it++)
 		{
@@ -108,10 +188,10 @@ string DTreeNode::toString()
 	if (children != NULL)
 		for (int j = 0; j < children->size(); j++)
 		{
-			ret += "\tChild: " + children->at(j)->description;
+			ret += "\tChild: " + children->at(j)->attr;
 			ret += children->at(j)->toString();
 			ret += "\n\n";
 		}
-	ret += "-----------------\n"; 	
+	ret += "-----------------\n"; 			
 	return ret;
 }

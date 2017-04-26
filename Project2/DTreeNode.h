@@ -1,4 +1,4 @@
-/**
+/**	
 *	@file DTreeNode.h
 *	@class DTreeNode
 *
@@ -25,7 +25,11 @@ using namespace std;
 class DTreeNode
 {
 	private:
-		string description;
+		string value;
+		char relop;
+		string attr;
+		string splitAttr;
+		
 		vector<DTreeNode*>* children = NULL;
 		list< vector<string> > set;
 
@@ -35,17 +39,29 @@ class DTreeNode
 		
 		vector<DTreeNode*>* getChildren();
 		
-		void split(string attr, int index, vector<string> attributes);
+		void split(string attr, int index, vector<string> attributeValues);
 	
 		void addCase(vector<string> newCase);
 	
 		vector<string> popCase();
 		void randomize();
 	
+		void setSplitAttr(string split);
 		bool isLeaf();
 		int getSize();
+		void setValue(string value);
+		string getValue();
+		string getClass(int index);
+	
+		bool multipleClasses();
+	
+		int frequency(int index, string value);
+	
+		DTreeNode* subset(int index, string value);
 	
 		string toString();
+	
+
 };
 
 #endif

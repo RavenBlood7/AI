@@ -92,6 +92,11 @@ void DTreeNode::randomize()
 	}		
 }
 
+void DTreeNode::setSplitAttr(string split)
+{
+	splitAttr = split;
+}
+
 bool DTreeNode::isLeaf()
 {
 	return (children == NULL);
@@ -116,7 +121,7 @@ string DTreeNode::getClass(int index)
 {
 	if (!set.empty())
 		return set.front().at(index);
-	else return "Unknown class";
+	else return splitAttr;
 }
 
 bool DTreeNode::multipleClasses()

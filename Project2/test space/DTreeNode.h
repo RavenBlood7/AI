@@ -46,6 +46,7 @@ class DTreeNode
 		vector<string> popCase();
 		void randomize();
 	
+		void setSplitAttr(string split);
 		bool isLeaf();
 		int getSize();
 		void setValue(string value);
