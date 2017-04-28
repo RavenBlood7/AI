@@ -126,10 +126,10 @@ string Structure::toString()
 	ret += "attributes:\n";	
 	for (int i = 0; i < attributeList.size(); i++)
 	{
-		ret += "\t" + attributeList.at(i) + " ";	
+		ret += "\t" + attributeList.at(i) + ": ";	
 			for (int j = 0; j < attributeValueMatrix.at(i).size(); j++)
 			{
-				ret += attributeValueMatrix.at(i).at(j);				
+				ret += attributeValueMatrix.at(i).at(j) + " ";				
 			}		
 		ret += "\n";
 	}		

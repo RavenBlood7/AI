@@ -9,14 +9,13 @@ DecisionTree::DecisionTree(string specFile, string dataFile)
 DecisionTree::~DecisionTree()
 {
 	delete root;
+	delete trainingSet;
 	delete testSet;
 	delete structure;
 }
 
 void DecisionTree::initializeRoot(string dataFile)
 {
-/////////////////////////////
-//cout << "in initRoot: " << endl;	
 	root = new DTreeNode();
 	ifstream inFile(dataFile.c_str());
 	stringstream tempStream;
@@ -35,91 +34,147 @@ void DecisionTree::initializeRoot(string dataFile)
 				tempStream >> line;		
 				tempVec.push_back(line);
 			}
-			root->addCase(tempVec);
+			root->addProbCase(tempVec);
 			tempVec.clear();
 		}
 		
 		//randomize data	
 		root->randomize();
+		trainingSet = root->clone();
 		
 		//place top  30% in test set
 		testSet = new DTreeNode();
 		int trainNum = 0.3 * root->getSize();
 		for (int i = 0; i < trainNum; i++)
 		{
-			testSet->addCase(root->popCase());
+			testSet->addProbCase(root->popCase());
+			trainingSet->popCase();
 		}
 	}
 	else
 	{
 		cout << "Error opening file: " << dataFile << endl;
 	}
-/////////////////////////////
-//cout << "out initRoot: " << endl;		
 }
 
-//@todo change this
 string DecisionTree::toString()
 {
-/////////////////////////////
-cout << "in toString: " << endl;		
+	if (root == NULL || root->getChildren() == NULL ||root->getChildren()->size() == 0) 
+		return "nothing to show\n";
+	stringstream tempStream;
 	string ret = "The decision tree:\n";
-	ret += "Structure:\n" + structure->toString();
-	//ret += "Test Set:\n" + testSet->toString();
-	//ret += "Root:\n" + root->toString();
-
+	//ret += "problem structure:\n" + structure->toString();
+	
+	//classification errors on training set and test set
+	tempStream << classificationError(trainingSet);
+	ret += "\n\nTraining set classification error: " + tempStream.str() + "\n";
+	tempStream.str("");
+	tempStream << classificationError(testSet);
+	ret += "Test set classification error: " + tempStream.str() + "\n";
+	
+	//rules
+	ret += "\n\nRules:\n\n";
 	ret += toString(root);
+	
+
 	return ret;
-/////////////////////////////
-//cout << "in toString: " << endl;			
 }
 
 string DecisionTree::toString(DTreeNode* node)
-{
-/////////////////////////////
-//cout << "in recToString: " << endl;			
+{		
 	string ret = "";
+	if (root->isLeaf()) return "root is leaf";
 	if (node != NULL)
 	{
 		if (node->isLeaf())
 		{
-			ret = "IF ";
-/////////////////////////////
-//cout << "in recToString: before for 1 " << (displayStack.size() - 1) << endl;	
+			//the actual rule
+			ret += "IF ";
 			int size = displayStack.size();
 			for (int i = 1; i < size ; i++)
 			{
 				ret += displayStack.at(i)->toString() + " AND ";
 			}
-
-/////////////////////////////
-//cout << "in recToString: before size - 1 " << endl;			
-				ret += node->toString();
-/////////////////////////////
-//cout << "in recToString: after size - 1 " << endl;							
-			ret += " THEN " + structure->getClassName() + " is " + node->getClass(structure->getNumAttributes());
+			ret += node->toString();
+			ret += " THEN " + structure->getClassName() + " is " + node->getClass(structure->getNumAttributes()) + "\n";
+			
+			//classification error on test set
+			stringstream tempStream;			
+			tempStream << classificationError(node);
+			ret += "\tclassification error on training set: " + tempStream.str() + "\n";
+								
+			//classification error on test set
+			DTreeNode* tempSet = testSet->clone();
+			DTreeNode* tempSet2 = new DTreeNode();
+			vector<string> tempCase ;
+			int count = 0;
+			bool mustAdd;			
+			while (tempSet->getSize() != 0)
+			{
+				tempCase = tempSet->popCase();
+				mustAdd = true;
+				for (int i = 1; i < displayStack.size(); i++)
+				{
+					if (displayStack.at(i)->getValue() == tempCase.at(i))
+					{
+						count++;
+						mustAdd = false;
+						break;
+					}
+				}				
+				if (mustAdd)
+				{	
+					tempSet2->addCase(tempCase);
+				}
+			}
+			tempStream.str("");
+			tempStream << classificationError(tempSet2);
+			ret += "\tclassification error on test set: " + tempStream.str() + "\n";
+			delete tempSet;
+			delete tempSet2;
+								
+			//number of data patterns associated with this rule
+			tempStream.str("");
+			tempStream << node->getSize();
+			ret += "\tnumber of data patterns: " + tempStream.str() + "\n";			
+			
+			//for each class: number of patterns associated with that class
+			vector<string> classValues = structure->getClassValues();
+			ret += "\tnumber of patternd for each class: \n";			
+			for (int i = 0; i < structure->getNumClassValues(); i++)
+			{
+				tempSet = node->subset(structure->getNumAttributes(), classValues.at(i));								
+				tempStream.str("");
+				tempStream << (count + tempSet->getSize());
+				ret += "\t\t" + classValues.at(i) + ": " + tempStream.str() + "\n";			
+				delete tempSet;
+			}
 		}
 		else
 		{	
 			displayStack.push_back(node);		
 			vector<DTreeNode*>* children = node->getChildren();
-/////////////////////////////
-//cout << "in recToString: before for " << endl;							
 			for (int i = 0; i < children->size(); i++)
 			{
 				ret += toString(children->at(i)) + "\n";
 			}				
-/////////////////////////////
-//cout << "in recToString: after for " << endl;										
 			displayStack.pop_back();
 		}
 	}
-/////////////////////////////
-//cout << "out recToString: " << endl;				
 	return ret;
 }
 
-string DecisionTree::toFile(string outFile)
+void DecisionTree::toFile(string outFile)
 {
-	return "garbage-for-now";
+	ofstream out(outFile.c_str());
+	
+	if (out.is_open())
+	{
+		out << toString();
+		out.close();
+	}
+	else
+	{
+		cout << "Error writing to file: " << outFile << endl;
+	}
 }

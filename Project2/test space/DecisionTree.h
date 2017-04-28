@@ -29,10 +29,13 @@ class DecisionTree
 	protected:
 		DTreeNode* root;
 		DTreeNode* testSet;
+		DTreeNode* trainingSet;
 		Structure* structure;
 		vector<DTreeNode*> displayStack;
 
 		void initializeRoot(string dataFile);	
+		virtual bool classify(vector<string> oneCase) = 0;	
+		virtual float classificationError(DTreeNode* set) = 0;	
 	public:
 		DecisionTree(string specFile, string dataFile);
 		virtual ~DecisionTree();
@@ -40,10 +43,11 @@ class DecisionTree
 		virtual void induceNoMissing() = 0;
 		virtual void induceWithMissing() = 0;
 		virtual void prune() = 0;
+
 	
 		string toString();
 		string toString(DTreeNode* node);
-		string toFile(string outFile);	
+		void toFile(string outFile);	
 };
 
 #endif

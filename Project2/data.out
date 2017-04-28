@@ -1,0 +1,59 @@
+The decision tree:
+
+
+Training set classification error: 0
+Test set classification error: 0.222222
+
+
+Rules:
+
+IF ( Country = USA ) AND ( Big-Star = yes ) THEN Success is true
+	classification error on training set: 0
+	classification error on test set: 0.222222
+	number of data patterns: 8
+	number of patternd for each class: 
+		true: 8
+		false: 0
+
+IF ( Country = USA ) AND ( Big-Star = no ) THEN Success is false
+	classification error on training set: 0
+	classification error on test set: 0.222222
+	number of data patterns: 2
+	number of patternd for each class: 
+		true: 0
+		false: 2
+
+
+IF ( Country = Europe ) AND ( Genre = Science-Fiction ) THEN Success is false
+	classification error on training set: 0
+	classification error on test set: 0.222222
+	number of data patterns: 1
+	number of patternd for each class: 
+		true: 0
+		false: 1
+
+IF ( Country = Europe ) AND ( Genre = Comedy ) THEN Success is true
+	classification error on training set: 0
+	classification error on test set: 0.222222
+	number of data patterns: 5
+	number of patternd for each class: 
+		true: 5
+		false: 0
+
+IF ( Country = Europe ) AND ( Genre = Romance ) THEN Success is false
+	classification error on training set: 0
+	classification error on test set: 0.222222
+	number of data patterns: 2
+	number of patternd for each class: 
+		true: 0
+		false: 2
+
+
+IF ( Country = Other ) THEN Success is false
+	classification error on training set: 0
+	classification error on test set: 0.222222
+	number of data patterns: 3
+	number of patternd for each class: 
+		true: 0
+		false: 3
+

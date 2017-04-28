@@ -32,6 +32,7 @@ class DTreeNode
 		
 		vector<DTreeNode*>* children = NULL;
 		list< vector<string> > set;
+		vector<float> probabilities;
 
 	public:
 		DTreeNode();
@@ -40,8 +41,12 @@ class DTreeNode
 		vector<DTreeNode*>* getChildren();
 		
 		void split(string attr, int index, vector<string> attributeValues);
+		void splitMissing(string attr, int index, vector<string> attributeValues);
+		void unsplit();
 	
 		void addCase(vector<string> newCase);
+		void addProbCase(vector<string> newCase);
+		float sumProb();
 	
 		vector<string> popCase();
 		void randomize();
@@ -52,14 +57,22 @@ class DTreeNode
 		void setValue(string value);
 		string getValue();
 		string getClass(int index);
+		string getClass();
+		string getAttr();	
 	
 		bool multipleClasses();
 	
 		int frequency(int index, string value);
 	
 		DTreeNode* subset(int index, string value);
+		DTreeNode* subsetNoMissing(int index);
+		
+		bool onlyLeafChildren();
+		DTreeNode *clone();
 	
 		string toString();
+		
+		
 	
 
 };

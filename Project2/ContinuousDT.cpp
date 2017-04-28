@@ -19,3 +19,14 @@ void ContinuousDT::prune()
 {
 	
 }
+
+
+bool ContinuousDT::classify(vector<string> oneCase)
+{
+	return false;
+}
+
+float ContinuousDT::classificationError(DTreeNode* set)
+{
+	return 0;
+}

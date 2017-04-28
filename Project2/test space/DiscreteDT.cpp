@@ -7,28 +7,21 @@ DiscreteDT::DiscreteDT(string specFile, string dataFile) : DecisionTree(specFile
 
 void DiscreteDT::induceNoMissing()
 {
-/////////////////////////////
-//cout << "in DT induceNoMissing: " << endl;	
 	divideAndConquer(root);
-/////////////////////////////
-//cout << "out DT induceNoMissing: " << endl;	
 }
 
 void DiscreteDT::induceWithMissing()
 {
-	
+	divideAndConquerMissing(root);
 }
 
 void DiscreteDT::prune()
 {
-	
+	recursivePrune(root);
 }
 
-//private recursive functions
 void DiscreteDT::divideAndConquer(DTreeNode *node)
 {
-/////////////////////////////
-//cout << "in DT divAndC: " << endl;		
 	//check if T is empty
 	if (node->getSize() == 0)
 	{
@@ -56,11 +49,7 @@ void DiscreteDT::divideAndConquer(DTreeNode *node)
 		for (int i = 0; i < size; i++)
 		{
 			//add information gain	
-			gain = informationGain(node, structure->getAttribute(i));
-/////////////////////////////
-//cout << "\t\tinfo gain on: "<< structure->getAttribute(i) << endl;							
-//cout << "\t\t#info gain: "<< gain << endl;				
-			
+			gain = informationGain(node, structure->getAttribute(i));			
 			infoGain.push_back(gain);
 		}	
 
@@ -82,10 +71,6 @@ void DiscreteDT::divideAndConquer(DTreeNode *node)
 		}			
 		
 		//split on that attribute
-/////////////////////////////
-cout << "split on: " << structure->getAttribute(index) << endl;			
-cout << "\tbecause of maximum info gain: " << max << endl;			
-cout << "\tnode: " << node->toString() << endl;	
 		if (max == 0) return;
 		node->split(structure->getAttribute(index), index, structure->getAttributeValues(structure->getAttribute(index)));
 	}
@@ -95,53 +80,31 @@ cout << "\tnode: " << node->toString() << endl;
 	{
 		divideAndConquer(children->at(i));
 	}
-/////////////////////////////
-//divideAndConquer(children->at(0));	
-//cout << "##################calling root child one " << endl;
-//divideAndConquer(root->getChildren()->at(0));	
-//cout << "##################calling root child child one "<< root->getChildren()->at(0)->getChildren()->at(0)->toString()<< endl;
-//divideAndConquer(root->getChildren()->at(0)->getChildren()->at(0));	
-	
-//cout << "out DT divAndC: " << endl;			
 }
 
 float DiscreteDT::informationGain(DTreeNode *node, string attribute)
-{
-/////////////////////////////
-//cout << "in informationGain" << endl;
+{	
 	return entropy(node, structure->getNumAttributes()) - averageEntropy(node, attribute);
-/////////////////////////////
-//cout << "out informationGain" << endl;	
 }
 
 float DiscreteDT::entropy(DTreeNode *node, int index)
 {
-/////////////////////////////
-//cout << "in entropy: " << index << endl;
 	if (node->getSize() == 0) return 0;
 	vector<string> classNames = structure->getClassValues();
 	float sum = 0;
 	float P= 0;
 	for (int i = 0; i < structure->getNumClassValues(); i++)
 	{
-/////////////////////////////
-//cout << "\tin entropy for: " << index << endl;		
 		P = node->frequency(index, classNames.at(i));//last column
-/////////////////////////////
-//cout << "\tin entropy for: " << classNames.at(i) << endl;		
 		P = P / node->getSize();
 		if (P != 0)
 			sum += P * log2(P);
 	}	
-/////////////////////////////
-//cout << "out entropy: " << (-1 * sum) << endl;	
 	return -1 * sum;
 }
 
 float DiscreteDT::averageEntropy(DTreeNode* node, string attribute)
 {
-/////////////////////////////
-//cout << "in averageEntropy: " << attribute << endl;
 	vector<string> attributeValues = structure->getAttributeValues(attribute);	
 	DTreeNode *subset;
 	float sum = 0;
@@ -155,16 +118,223 @@ float DiscreteDT::averageEntropy(DTreeNode* node, string attribute)
 				
 		//partition set into a subset of 
 		subset = node->subset(structure->getIndex(attribute), attributeValues.at(i));
-		
-/////////////////////////////
-//cout << "/////////////////////////////////////////////////////////////" << endl;		
-//cout << "subset: " << subset->toString() << endl;	
-//cout << "/////////////////////////////////////////////////////////////" << endl;			
 		sum += P * entropy(subset, structure->getNumAttributes());		
 		delete subset;
 	}
-/////////////////////////////
-//cout << "out averageEntropy: " << attribute << endl;	
-//cout << "\t--: " << sum << endl;	
 	return sum;
+}
+
+bool DiscreteDT::classify(vector<string> oneCase)
+{
+	bool missing = false;
+	for (int i = 0; i < oneCase.size(); i++)
+	{
+		if (oneCase.at(i) == "?")
+		{
+			missing = true;
+			break;
+		}
+	}			
+	
+	DTreeNode* ptr;
+	//no missing values
+	if (!missing)
+	{		
+		ptr = root;
+		string attr = "";
+		vector<string> attrValues;
+		if (ptr != NULL)
+		while (!ptr->isLeaf())
+		{			
+			attr = ptr->getChildren()->at(0)->getAttr();
+			attrValues = structure->getAttributeValues(attr);
+			if (attrValues.size() == 0) return false;
+			
+			for (int i=0; i < ptr->getChildren()->size(); i++)
+			{
+				if (attrValues.at(i) == oneCase.at(structure->getIndex(attr)))
+				{
+					ptr = ptr->getChildren()->at(i);
+					break;
+				}
+			}
+		}
+	}
+	else
+	{
+	//missing values
+		ptr = root;
+		string attr = "";
+		vector<string> attrValues;
+		if (ptr != NULL)
+		while (!ptr->isLeaf())
+		{
+			attr = ptr->getChildren()->at(0)->getAttr();
+			attrValues = structure->getAttributeValues(attr);
+			for (int i=0; i < attrValues.size(); i++)
+			{
+				if (attrValues.at(i) == oneCase.at(structure->getIndex(attr)))
+				{
+					ptr = ptr->getChildren()->at(i);
+					break;
+				}
+				else if (oneCase.at(structure->getIndex(attr)) == "?")
+				{
+					//for each attribute / child, check for highest probability
+					float max = ptr->getChildren()->at(0)->sumProb();
+					for (int j=1; j < attrValues.size(); j++)
+					{
+						if (max < ptr->getChildren()->at(j)->sumProb())
+							max = ptr->getChildren()->at(j)->sumProb();
+					
+					}
+					
+					//pick maximum					
+					int counter;
+					for (counter=0; counter < ptr->getChildren()->size(); counter++)
+					{
+						if (max == ptr->getChildren()->at(counter)->sumProb())
+							break;
+					}										
+					ptr = ptr->getChildren()->at(counter );				
+					break;					
+				}
+			}
+		}		
+	}
+
+	return ptr->getClass(structure->getNumAttributes()) == oneCase.at(structure->getNumAttributes());
+}
+
+float DiscreteDT::classificationError(DTreeNode* set)
+{
+	DTreeNode *temp = set->clone();
+	int size = set->getSize();
+	int count = 0;
+	while (temp->getSize() > 0)
+	{
+		//count errors
+		if (!classify(temp->popCase()))
+		{
+			count++;
+		}
+	}
+	return 1.0 * count / size;
+}
+
+/////////////////////MISSING VALUES/////////////////////////////
+void DiscreteDT::divideAndConquerMissing(DTreeNode *node)
+{
+	//check if T is empty
+	if (node->getSize() == 0)
+	{
+		node->setSplitAttr(structure->getClassValues().at(rand() % structure->getNumClassValues()));
+		//assign class
+		return;
+	}
+	//check if T contains only a single class
+	if (!node->multipleClasses())
+	{
+		//assign class to node
+		//node->setDescription();
+		return;
+	}
+	//check if T has different cases
+	else
+	{		
+		//calulate information gain on each attribute
+		vector<string> attributes = structure->getAttributes();
+		vector<string> attributeValues;
+		vector<float> infoGain;
+		float gain;
+		int size = attributes.size();
+		//for each attribute:
+		for (int i = 0; i < size; i++)
+		{
+			//add information gain	
+			gain = informationGainMissing(node, structure->getAttribute(i));
+			infoGain.push_back(gain);
+		}	
+
+		//find highest information gain
+		float max = infoGain.at(0);
+		for (int i = 1; i < size; i++)
+		{
+			if (infoGain.at(i) > max)
+				max = infoGain.at(i);
+		}	
+		int index = 0;
+		for (int i = 0; i < size; i++)
+		{
+			if (infoGain.at(i) == max)
+			{
+				index = i;
+				break;
+			}
+		}			
+		
+		//split on that attribute
+		if (max == 0) return;
+		node->splitMissing(structure->getAttribute(index), index, structure->getAttributeValues(structure->getAttribute(index)));
+	}
+	//call recursively
+	vector<DTreeNode*>* children = node->getChildren();
+	for (int i = 0; i < children->size(); i++)
+	{
+		divideAndConquerMissing(children->at(i));
+	}
+}
+
+float DiscreteDT::informationGainMissing(DTreeNode *node, string attribute)
+{	
+	DTreeNode* noMissing = node->subsetNoMissing(structure->getIndex(attribute));
+	int size = noMissing->getSize() ;
+	float gain = informationGain(noMissing, attribute);
+	delete noMissing;
+	return 1.0 * size / node->getSize() * gain;
+}
+
+/////////////////////PRUNE/////////////////////////////
+DTreeNode* DiscreteDT::recursivePrune(DTreeNode *node)
+{
+	//root
+	if (node == root && node->isLeaf())
+	{
+		return NULL;
+	}
+	if (node->isLeaf())
+	{
+		return node;
+	}
+	else if (!node->onlyLeafChildren())
+	{
+		//recursive prune all children
+		for (int i = 0; i < node->getChildren()->size(); i++)
+		{
+			node->getChildren()->at(i) = recursivePrune(node->getChildren()->at(i));
+		}
+		//if change to only leaf children
+		if (node->onlyLeafChildren())
+			return recursivePrune(node);
+	}
+	//if only leaf children
+	else if (node->onlyLeafChildren())
+	{
+		DTreeNode* subtree = node->clone();		
+		float before = classificationError(testSet);
+		node->unsplit();
+		float after = classificationError(testSet);
+		
+		//if deteriorate > 5%
+		if ((after - before) > 0.05)
+		{
+			delete node;
+			node = subtree;
+			return node;
+		}			
+		else
+		{
+			return node;
+		}
+	}
 }

@@ -9,6 +9,12 @@ void usage();
 int main(int argc, char *argv[])
 {
 	//Check arguments and all that
+	if (argc != 4)
+	{		
+		cout << "Error: invalid number of arguments." << endl;
+		usage();
+		return(1);
+	}
 	
 	//Induce proper decision tree
 	DecisionTree* tree;
@@ -49,6 +55,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
+		cout << "Error: no such option: " << option << endl;
 		usage();
 		return 1;
 	}
@@ -61,5 +68,12 @@ int main(int argc, char *argv[])
 
 void usage()
 {
-	//also give list of options
+	cout << "Usage: ./DecisionTree <option> <specfile> <datafile>" << endl;
+	cout << "\toptions are:" << endl;
+	cout << "\t-d" << endl;
+	cout << "\t-c" << endl;
+	cout << "\t-md" << endl;
+	cout << "\t-mc" << endl;
+	cout << "\t-pd" << endl;
+	cout << "\t-pc" << endl;
 }
