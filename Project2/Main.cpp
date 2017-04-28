@@ -24,34 +24,77 @@ int main(int argc, char *argv[])
 	if (option == "-d")
 	{
 		tree = new DiscreteDT(specFile, dataFile);
+		cout << "inducing tree" << endl;
+		cout << "\t\t---" << endl;
 		tree->induceNoMissing();
+		cout << "\t\t---" << endl;		
+		cout << "writing to file..." << endl;
+		cout << "\t\t---" << endl;
+		tree->toFile("data.out");
 	}
 	else if (option == "-c")
 	{
 		tree = new ContinuousDT(specFile, dataFile);
-		tree->induceNoMissing();
+		cout << "\t\t---" << endl;
+		cout << "inducing tree" << endl;
+		cout << "\t\t---" << endl;
+		tree->induceNoMissing();		
+		cout << "\t\t---" << endl;
+		cout << "writing to file..." << endl;
+		cout << "\t\t---" << endl;
+		tree->toFile("data.out");
 	}
 	else if (option == "-md")
 	{
 		tree = new DiscreteDT(specFile, dataFile);
-		tree->induceWithMissing();		
+		cout << "inducing tree" << endl;
+		cout << "\t\t---" << endl;
+		tree->induceWithMissing();				
+		cout << "\t\t---" << endl;
+		cout << "writing to file..." << endl;
+		cout << "\t\t---" << endl;
+		tree->toFile("data.out");
 	}
 	else if (option == "-mc")
 	{
 		tree = new ContinuousDT(specFile, dataFile);
-		tree->induceWithMissing();		
+		cout << "inducing tree" << endl;
+		cout << "\t\t---" << endl;
+		tree->induceWithMissing();				
+		cout << "\t\t---" << endl;
+		cout << "writing to file..." << endl;
+		cout << "\t\t---" << endl;
+		tree->toFile("data.out");
 	}
 	else if (option == "-pd")
 	{
 		tree = new DiscreteDT(specFile, dataFile);
+		cout << "inducing tree" << endl;
+		cout << "\t\t---" << endl;
 		tree->induceNoMissing();		
-		tree->prune();
+		cout << "\t\t---" << endl;
+		cout << "pruning tree" << endl;
+		cout << "\t\t---" << endl;
+		tree->prune();		
+		cout << "\t\t---" << endl;
+		cout << "writing to file..." << endl;
+		cout << "\t\t---" << endl;
+		tree->toFile("data.out", true);
 	}
 	else if (option == "-pc")
 	{
 		tree = new ContinuousDT(specFile, dataFile);
+		cout << "inducing tree" << endl;
+		cout << "\t\t---" << endl;
 		tree->induceNoMissing();		
-		tree->prune();		
+		cout << "\t\t---" << endl;
+		cout << "pruning tree" << endl;		
+		cout << "\t\t---" << endl;
+		tree->prune();				
+		cout << "\t\t---" << endl;
+		cout << "writing to file..." << endl;
+		cout << "\t\t---" << endl;
+		tree->toFile("data.out", true);
 	}
 	else
 	{
@@ -59,8 +102,6 @@ int main(int argc, char *argv[])
 		usage();
 		return 1;
 	}
-	tree->toFile("data.out");
-	cout << tree->toString();
 	
 	delete tree;
 	return 0;

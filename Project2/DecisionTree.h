@@ -42,12 +42,13 @@ class DecisionTree
 		
 		virtual void induceNoMissing() = 0;
 		virtual void induceWithMissing() = 0;
-		virtual void prune() = 0;
+		virtual void prune() {};
 
 	
 		string toString();
 		string toString(DTreeNode* node);
 		void toFile(string outFile);	
+		void toFile(string outFile, bool prune);	
 };
 
 #endif

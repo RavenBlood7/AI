@@ -178,3 +178,26 @@ void DecisionTree::toFile(string outFile)
 		cout << "Error writing to file: " << outFile << endl;
 	}
 }
+
+
+void DecisionTree::toFile(string outFile, bool prune)
+{
+	ofstream out(outFile.c_str());
+	
+	if (out.is_open())
+	{
+		out << "Original Tree:" << endl;
+		out << "______________" << endl;
+		out << toString();
+		DecisionTree::prune();
+		out << "______________" << endl;
+		out << "Pruned Tree:" << endl;
+		out << "______________" << endl;
+		out << toString();
+		out.close();
+	}
+	else
+	{
+		cout << "Error writing to file: " << outFile << endl;
+	}	
+}
