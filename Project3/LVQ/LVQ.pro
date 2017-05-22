@@ -15,4 +15,14 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    lvqi.cpp \
+    competative_lvqi.cpp \
+    network.cpp \
+    patternset.cpp
+
+HEADERS += \
+    lvqi.h \
+    competative_lvqi.h \
+    network.h \
+    patternset.h
