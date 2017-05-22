@@ -1,5 +1,6 @@
 #include <iostream>
 #include "DiscreteDT.h"
+#include "ContinuousDT.h"
 
 using namespace std;
 
@@ -7,7 +8,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 	//DecisionTree *dt = new DiscreteDT("example.spec", "example.data");
-	DecisionTree *dt = new DiscreteDT("tic-tac-toe.spec", "tic-tac-toe.data");
+	DecisionTree *dt = new ContinuousDT("heart.spec", "heart.data");
 	//DecisionTree *dt = new DiscreteDT("krkopt.spec", "krkopt.data");
 	cout << dt->toString() << endl;
 	///////////////
@@ -22,8 +23,8 @@ int main(int argc, char *argv[])
 	dt->prune();
 	cout << dt->toString() << endl;
 	////////////
-	cout << "writing to file..." << endl;
-	dt->toFile("data.out");
+	//cout << "writing to file..." << endl;
+	//dt->toFile("data.out");
 	delete dt;
 	
 	return 0;

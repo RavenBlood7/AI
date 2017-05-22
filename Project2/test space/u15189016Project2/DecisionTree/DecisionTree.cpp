@@ -62,7 +62,7 @@ string DecisionTree::toString()
 	stringstream tempStream;
 	string ret = "The decision tree:\n";
 	ret += "problem structure:\n" + structure->toString();
-
+	
 	//classification errors on training set and test set
 	tempStream << classificationError(trainingSet);
 	ret += "\n\nTraining set classification error: " + tempStream.str() + "\n";
@@ -79,7 +79,13 @@ string DecisionTree::toString()
 	if (root == NULL || root->getChildren() == NULL ||root->getChildren()->size() == 0) 
 		return ret + "nothing to show\n";		
 	ret += toString(root);
-	
+
+	//classification errors on training set and test set
+	tempStream << classificationError(trainingSet);
+	ret += "\n\nTraining set classification error: " + tempStream.str() + "\n";
+	tempStream.str("");
+	tempStream << classificationError(testSet);
+	ret += "Test set classification error: " + tempStream.str() + "\n";	
 
 	return ret;
 }

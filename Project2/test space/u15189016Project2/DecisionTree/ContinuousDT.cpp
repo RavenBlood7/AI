@@ -22,6 +22,7 @@ void ContinuousDT::prune()
 ////////////////////////NO MISSING VALUES///////////////////////////////////////
 void ContinuousDT::divideAndConquer(DTreeNode* node)
 {
+	cout << "Considering node: " << node->toString() << endl;	
 	//check if T is empty
 	if (node->getSize() == 0)
 	{
@@ -51,7 +52,8 @@ void ContinuousDT::divideAndConquer(DTreeNode* node)
 		{
 			//add information gain	
 			
-			gain = informationGain(node, structure->getAttribute(i));			
+			gain = informationGain(node, structure->getAttribute(i));	
+			cout << "\tCalculated information gain: " << gain << endl;
 			if (structure->getAttributeValues(structure->getAttribute(i)).at(0) == "Real")
 			{
 				values.push_back(curValue);
@@ -67,6 +69,7 @@ void ContinuousDT::divideAndConquer(DTreeNode* node)
 			if (infoGain.at(i) > max)
 				max = infoGain.at(i);
 		}	
+		if (max == -100) return;
 		int index = 0;
 		for (int i = 0; i < size; i++)
 		{
@@ -116,6 +119,7 @@ float ContinuousDT::continuousInfoGain(DTreeNode* node, string attribute)
 	{
 		testValues.push_back((possibleValues.at(i) + possibleValues.at(i + 1)) / 2);
 	}
+	if (testValues.size() < 2) return 0;	
 	
 	//for all values in the second vector
 	float currentEntropy = entropy(node, structure->getNumAttributes());
@@ -199,6 +203,14 @@ float ContinuousDT::averageEntropy(DTreeNode* node, string attribute)
 
 bool ContinuousDT::classify(vector<string> oneCase)
 {
+/////////////////////////		
+cout << "classifying:\n\t";	
+	for (int i = 0; i < oneCase.size(); i++)
+	{
+		cout << oneCase.at(i) << " ";
+	}			
+	cout << endl;
+////////////////////////	
 	stringstream tempStream;	
 	float tempValue;
 	float tempValue2;
@@ -246,7 +258,7 @@ bool ContinuousDT::classify(vector<string> oneCase)
 			}
 		}
 	}
-	
+
 	return ptr->getClass(structure->getNumAttributes()) == oneCase.at(structure->getNumAttributes());
 }
 
@@ -254,6 +266,7 @@ float ContinuousDT::classificationError(DTreeNode* set)
 {
 	DTreeNode *temp = set->clone();
 	int size = set->getSize();
+	if (size == 0) return 0;
 	int count = 0;
 	while (temp->getSize() > 0)
 	{

@@ -27,11 +27,10 @@ int main(int argc, char *argv[])
 		cout << "inducing tree" << endl;
 		cout << "\t\t---" << endl;
 		tree->induceNoMissing();
-		cout << tree->toString();
 		cout << "\t\t---" << endl;		
 		cout << "writing to file..." << endl;
 		cout << "\t\t---" << endl;
-		tree->toFile("data.out");		
+		tree->toFile("data.out");
 		cout << tree->toString();
 	}
 	else if (option == "-c")
@@ -44,7 +43,7 @@ int main(int argc, char *argv[])
 		cout << "\t\t---" << endl;
 		cout << "writing to file..." << endl;
 		cout << "\t\t---" << endl;
-		tree->toFile("data.out");
+		tree->toFile("data.out");		
 		cout << tree->toString();
 	}
 	else if (option == "-md")
@@ -57,7 +56,7 @@ int main(int argc, char *argv[])
 		cout << "\t\t---" << endl;
 		cout << "writing to file..." << endl;
 		cout << "\t\t---" << endl;
-		tree->toFile("data.out");
+		tree->toFile("data.out");		
 		cout << tree->toString();
 	}
 	else if (option == "-mc")
@@ -70,7 +69,7 @@ int main(int argc, char *argv[])
 		cout << "\t\t---" << endl;
 		cout << "writing to file..." << endl;
 		cout << "\t\t---" << endl;
-		tree->toFile("data.out");
+		tree->toFile("data.out");		
 		cout << tree->toString();
 	}
 	else if (option == "-pd")
