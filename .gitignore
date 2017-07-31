@@ -1,0 +1,8 @@
+#for latex
+*.aux
+*.log
+*.bbl
+*.blg
+*.dvi
+*.toc
+*.syntex.gz
