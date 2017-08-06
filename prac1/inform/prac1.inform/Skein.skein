@@ -1,0 +1,1433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-0x26f2f00" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>Inform 7</generator>
+  <activeNode nodeId="node-0x7f4458481470"/>
+  <item nodeId="node-0x26f2f00">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">
+
+
+prac1
+An Interactive Fiction by root
+Release 1 / Serial number 170806 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
+
+office
+You can see a CD here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc81c0"/>
+      <child nodeId="node-0x2e0d5d0"/>
+      <child nodeId="node-0x2e6b140"/>
+      <child nodeId="node-0x2e6b5c0"/>
+      <child nodeId="node-0x7f44540e4140"/>
+      <child nodeId="node-0x7f44b8467dc0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc81c0">
+    <command xml:space="preserve">go west</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc8340"/>
+      <child nodeId="node-0x2de3410"/>
+      <child nodeId="node-0x2e0d150"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc8340">
+    <command xml:space="preserve">go left</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc84c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc84c0">
+    <command xml:space="preserve">go lab</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc8640"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc8640">
+    <command xml:space="preserve">go door</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc87c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc87c0">
+    <command xml:space="preserve">show</command>
+    <result xml:space="preserve">(yourself yourself)
+(first taking yourself)
+You are always self-possessed.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc8940"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc8940">
+    <command xml:space="preserve">show door</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc8ac0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc8ac0">
+    <command xml:space="preserve">go into office</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc8c40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc8c40">
+    <command xml:space="preserve">go </command>
+    <result xml:space="preserve">You&apos;ll have to say which compass direction to go in.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc8dc0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc8dc0">
+    <command xml:space="preserve">go east</command>
+    <result xml:space="preserve">
+lab
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2dc8f40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2dc8f40">
+    <command xml:space="preserve">show</command>
+    <result xml:space="preserve">(yourself yourself)
+(first taking yourself)
+You are always self-possessed.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3110"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3110">
+    <command xml:space="preserve">display</command>
+    <result xml:space="preserve">(yourself yourself)
+(first taking yourself)
+You are always self-possessed.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3290"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3290">
+    <command xml:space="preserve">go computer</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2de3410">
+    <command xml:space="preserve">go east</command>
+    <result xml:space="preserve">
+lab
+You can see a computer here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3590"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3590">
+    <command xml:space="preserve">go computer</command>
+    <result xml:space="preserve">That&apos;s not something you can enter.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3710"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3710">
+    <command xml:space="preserve">turn on computer</command>
+    <result xml:space="preserve">It isn&apos;t something you can switch.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3890"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3890">
+    <command xml:space="preserve">take computer</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3a10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3a10">
+    <command xml:space="preserve">go west</command>
+    <result xml:space="preserve">
+office
+You can see a CD here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3b90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3b90">
+    <command xml:space="preserve">put computer down</command>
+    <result xml:space="preserve">Dropped.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3d10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3d10">
+    <command xml:space="preserve">go east</command>
+    <result xml:space="preserve">
+lab
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2de3e90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2de3e90">
+    <command xml:space="preserve">go west</command>
+    <result xml:space="preserve">
+office
+You can see a computer and a CD here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e0d150">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+lab
+You can see a computer here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e0d2d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e0d2d0">
+    <command xml:space="preserve">take computer</command>
+    <result xml:space="preserve">Much too heavy dude..
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e0d450"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e0d450">
+    <command xml:space="preserve">eat computer</command>
+    <result xml:space="preserve">That&apos;s plainly inedible.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e0d5d0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+lab
+You can see a computer (empty) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e0d750"/>
+      <child nodeId="node-0x2e0dd50"/>
+      <child nodeId="node-0x2e26be0"/>
+      <child nodeId="node-0x2e50f10"/>
+      <child nodeId="node-0x7f44540e4740"/>
+      <child nodeId="node-0x7f44b83024b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e0d750">
+    <command xml:space="preserve">switch on computer</command>
+    <result xml:space="preserve">You switch the computer on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e0d8d0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e0d8d0">
+    <command xml:space="preserve">switch on computer</command>
+    <result xml:space="preserve">That&apos;s already on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e0da50"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e0da50">
+    <command xml:space="preserve">pick up computer</command>
+    <result xml:space="preserve">Much too heavy dude..
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e0dbd0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e0dbd0">
+    <command xml:space="preserve">take computer</command>
+    <result xml:space="preserve">Much too heavy dude..
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e0dd50">
+    <command xml:space="preserve">insert CD</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e0ded0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e0ded0">
+    <command xml:space="preserve">insert CD into computer</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e26160"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e26160">
+    <command xml:space="preserve">put CD into computer</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e262e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e262e0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+office
+You can see a CD here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e26460"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e26460">
+    <command xml:space="preserve">take CD</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e265e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e265e0">
+    <command xml:space="preserve">insert CD into computer</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e26760"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e26760">
+    <command xml:space="preserve">put CD into computer</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e268e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e268e0">
+    <command xml:space="preserve">activate computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e26a60"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e26a60">
+    <command xml:space="preserve">deactivate computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e26be0">
+    <command xml:space="preserve">activate computer</command>
+    <result xml:space="preserve">The computer is now turned on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e26d60"/>
+      <child nodeId="node-0x2e26ee0"/>
+      <child nodeId="node-0x2e50490"/>
+      <child nodeId="node-0x2e50910"/>
+      <child nodeId="node-0x2e50a90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e26d60">
+    <command xml:space="preserve">activating computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e26ee0">
+    <command xml:space="preserve">go computer</command>
+    <result xml:space="preserve">That&apos;s not something you can enter.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e50190"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e50190">
+    <command xml:space="preserve">action activate</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e50310"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e50310">
+    <command xml:space="preserve">activating a computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e50490">
+    <command xml:space="preserve">activate the computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e50610"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e50610">
+    <command xml:space="preserve">activating computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e50790"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e50790">
+    <command xml:space="preserve">activating the computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e50910">
+    <command xml:space="preserve">activate computer</command>
+    <result xml:space="preserve">No good, Mike. It&apos;s already switched on.
+
+The computer is now turned on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e50a90">
+    <command xml:space="preserve">activat computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e50c10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e50c10">
+    <command xml:space="preserve">activating computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e50d90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e50d90">
+    <command xml:space="preserve">computer activate</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e50f10">
+    <command xml:space="preserve">activate the computer</command>
+    <result xml:space="preserve">No good, Mike. It&apos;s switched off.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44580cabe0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44580cabe0">
+    <command xml:space="preserve">activate computer</command>
+    <result xml:space="preserve">I didn&apos;t understand that sentence.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44580caa60"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44580caa60">
+    <command xml:space="preserve">activate the computer the computer</command>
+    <result xml:space="preserve">I only understood you as far as wanting to activate the computer.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44580ca8e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44580ca8e0">
+    <command xml:space="preserve">active the computer computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44580cad60"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44580cad60">
+    <command xml:space="preserve">activate the computer</command>
+    <result xml:space="preserve">You must supply a noun.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44580caee0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44580caee0">
+    <command xml:space="preserve">activate the computer computer</command>
+    <result xml:space="preserve">I only understood you as far as wanting to activate the computer.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f44540e4740">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">(the computer)
+The computer is now turned on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44540e4bc0"/>
+      <child nodeId="node-0x7f44540e4d40"/>
+      <child nodeId="node-0x7f44b84671c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44540e4bc0">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">(the computer)
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44540e4a40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44540e4a40">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">(the computer)
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44540e48c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44540e48c0">
+    <command xml:space="preserve">activate the computer</command>
+    <result xml:space="preserve">&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f44540e4d40">
+    <command xml:space="preserve">activaet</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44540e4ec0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44540e4ec0">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">(the computer)
+No good, Mike. It&apos;s already switched on.
+
+The computer is now turned on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b83021b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b83021b0">
+    <command xml:space="preserve">deactivate the computer</command>
+    <result xml:space="preserve">The computer is now turned off.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8302330"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8302330">
+    <command xml:space="preserve">deactivate</command>
+    <result xml:space="preserve">(the computer)
+No good, Mike. It&apos;s already switched off.
+
+The computer is now turned off.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f44b84671c0">
+    <command xml:space="preserve">deactivate</command>
+    <result xml:space="preserve">(the computer)
+The computer is now turned off.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8467340"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8467340">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+office
+You can see a CD here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b84674c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b84674c0">
+    <command xml:space="preserve">take</command>
+    <result xml:space="preserve">(the CD)
+Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8467640"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8467640">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+lab
+You can see a computer (empty) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b84677c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b84677c0">
+    <command xml:space="preserve">put into computer</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8467940"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8467940">
+    <command xml:space="preserve">insert cd into computer</command>
+    <result xml:space="preserve">You must turn on the computer first.
+
+You put the CD into the computer.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8467ac0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8467ac0">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">(the computer)
+The computer is now turned on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8467c40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8467c40">
+    <command xml:space="preserve">insert the cd into the computer</command>
+    <result xml:space="preserve">(first taking the CD)
+You put the CD into the computer.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f44b83024b0">
+    <command xml:space="preserve">activate </command>
+    <result xml:space="preserve">(the computer)
+The computer is now turned on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8302630"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8302630">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">(the computer)
+No good, Mike. It&apos;s already switched on.
+
+The computer is now turned on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b83027b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b83027b0">
+    <command xml:space="preserve">insert cd into computer</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8302930"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8302930">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+office
+You can see a CD here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8302ab0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8302ab0">
+    <command xml:space="preserve">take cd</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8302c30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8302c30">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+lab
+You can see a computer (empty) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8302db0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8302db0">
+    <command xml:space="preserve">put cd</command>
+    <result xml:space="preserve">(in the CD)
+You can&apos;t put something inside itself.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8302f30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8302f30">
+    <command xml:space="preserve">insert cd into computer</command>
+    <result xml:space="preserve">You put the CD into the computer.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e6b140">
+    <command xml:space="preserve">take CD</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e6b2c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e6b2c0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+lab
+You can see a computer here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e6b440"/>
+      <child nodeId="node-0x7f44580ca760"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e6b440">
+    <command xml:space="preserve">insert CD into computer</command>
+    <result xml:space="preserve">You must turn on the computer first.
+
+That can&apos;t contain things.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f44580ca760">
+    <command xml:space="preserve">activate computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e6b5c0">
+    <command xml:space="preserve">take cd</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e6b740"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e6b740">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+lab
+You can see a computer here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e6b8c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e6b8c0">
+    <command xml:space="preserve">put cd into computer</command>
+    <result xml:space="preserve">You must turn on the computer first.
+
+That can&apos;t contain things.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e6ba40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e6ba40">
+    <command xml:space="preserve">activate computer</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e6bbc0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e6bbc0">
+    <command xml:space="preserve">turn on computer</command>
+    <result xml:space="preserve">You switch the computer on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e6bd40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e6bd40">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e6bec0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e6bec0">
+    <command xml:space="preserve">activating</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f44540e4140">
+    <command xml:space="preserve">ea</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44540e42c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44540e42c0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+lab
+You can see a computer here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44540e4440"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44540e4440">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">(the computer)
+did it work?
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44540e45c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44540e45c0">
+    <command xml:space="preserve">activate computer</command>
+    <result xml:space="preserve">No good, Mike. It&apos;s already switched on.
+
+did it work?
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f44b8467dc0">
+    <command xml:space="preserve">take</command>
+    <result xml:space="preserve">(the CD)
+Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44b8467f40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44b8467f40">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+lab
+You can see a computer (empty) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f4458481170"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f4458481170">
+    <command xml:space="preserve">activate</command>
+    <result xml:space="preserve">(the CD)
+The computer is now turned on.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f44584812f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f44584812f0">
+    <command xml:space="preserve">insert the cd into the computer</command>
+    <result xml:space="preserve">You put the CD into the computer.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f4458481470"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f4458481470">
+    <command xml:space="preserve">exit</command>
+    <result xml:space="preserve">But you aren&apos;t in anything at the moment.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+</Skein>
