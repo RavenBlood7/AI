@@ -4,7 +4,7 @@
 %\usepackage{qtree}
 %\usepackage{color}
 %\usepackage{forest}
-%\usepackage{listings}
+\usepackage{listings}
 \usepackage{tikz}	%for the graphics
 \usepackage{cite} 	%for bibtex
 \usepackage{url}	%for the url's in bibtex
@@ -19,21 +19,35 @@
 \section{Question 1: Esolang}
 According to esolang \cite{esolang}, an esoteric programming language, or esolang, is a computer programming language that is designed to experiment with peculiar ideas and to be a joke, rather than for practical use. The word \textit{esoteric} means "likely to be understood by only a small number of people\cite{wikipedia}." This implies that such a language would only be understood by a small number of developers. 
 \section{Question 2: Views on Esoteric languages}
-	\subsection{for}
+	\subsection{against}
 	potentials
+		lateral thinking
 		creative thinking
 		expression
 		reach new ways of programming that may aid in future
 	expression of an art
 	tests the boundaries of computer science
 	
-	\subsection{against}
+	Although esoteric languages have been considered as no more than jokes, they do seem to carry some potential. This potential may not be to write practical programs, or even to be used in the real world, but there are other possibilities to consider when thinking about these languages. First of all, it stimulates creative and lateral thinking. \cite{wikipedia2} explains that \textit{lateral thinking} means "an indirect method of thinking which is not immediately obvious and involves ideas which may not be obtainable by using the traditional step-by-step method of thinking." This "out of the box" means of thought introduces brand new ideas of solving problems, which may turn out useful in computer science research. These problem solving methods could be a big aid to test the boundaries and limits of our current knowledge of computer science, as well as information science.
+\newline
+\newline	
+	Also, it can be considered as an expression in the form of art\cite{esolangArt}. Some of these languages are no more useful than a painting hanging in a gallary. We made such a difficult language simply because we can, in the same way a water-colour painting is a representation of the artist's abilities and talents. The programming language of Piet is a good example of this, as it transforms each program into a literal work of modern art. (see figure 1)
+	
+	\subsection{for}
 	list some really silly ones
 	seems like waste of time
 	unstructured means informal means one could have spent the time doing something more focused
 	list costs
+	
+	However, it must be said that some esoteric languages are specifically just for fun. For example, the language LOLCODE is based off the LOLCats phenomenon\cite{esolangArt}. It uses silly words and phrases that would commonly be used by LOLCats to write programs. A lot of this could be seen as a waste of time. These programmers could have spent their time doing formal research into some computer science prinicples. One could have seen a better furthering of research if their time spent were more focused. 
+	
+			\begin{figure}[h]
+			\centering
+			\includegraphics[width=200px]{helloworld-piet.png}
+			\caption{figure 1}
+		\end{figure}
 \section{Question 3: Practical Examples}
-	\subsection{esolang one}
+	\subsection{Esolang one: Ook!}
 	name
 	description
 		designer
@@ -44,7 +58,63 @@ According to esolang \cite{esolang}, an esoteric programming language, or esolan
 		
 	short code snipped
 	short explanation of code snippet
-	\subsection{esolang two}
+	
+	Ook! is an esoteric language based on another esoteric language called BrainF***. It was created by a man called David Morgan-Mar even before the year 2008. Both of these languages are Turing-complete\cite{ook2}. There are only three distinct syntax elements:
+	\begin{itemize}
+	\item Ook.
+	\item Ook?
+	\item Ook!
+	\end{itemize}
+	These three elements are combined to form the eight BrainF*** commands: \cite{ook}
+\begin{itemize}
+
+    \item Ook. Ook?\\
+    Move the Memory Pointer to the next array cell.
+    \item Ook? Ook.\\
+    Move the Memory Pointer to the previous array cell.
+    \item Ook. Ook.\\
+    Increment the array cell pointed at by the Memory Pointer.
+    \item Ook! Ook!\\
+    Decrement the array cell pointed at by the Memory Pointer.
+    \item Ook. Ook!\\
+    Read a character from STDIN and put its ASCII value into the cell pointed at by the Memory Pointer.
+    \item Ook! Ook.\\
+    Print the character with ASCII value equal to the value in the cell pointed at by the Memory Pointer.
+    \item Ook! Ook?\\
+    Move to the command following the matching Ook? Ook! if the value in the cell pointed at by the Memory Pointer is zero. Note that Ook! Ook? and Ook? Ook! commands nest like pairs of parentheses, and matching pairs are defined in the same way as for parentheses.
+    \item Ook? Ook!\\
+    Move to the command following the matching Ook! Ook? if the value in the cell pointed at by the Memory Pointer is non-zero. 
+\end{itemize}	
+	The code lacks a lot in the readability and writability departments, as there are only three different possibilities of lexical tokens.
+	\begin{lstlisting}
+Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook?
+Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook! Ook! 
+Ook? Ook! Ook? Ook. Ook! Ook. Ook. Ook? Ook. Ook. Ook. 
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook! Ook? Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook. Ook. Ook? Ook! Ook! Ook? Ook! Ook? Ook. Ook. Ook. 
+Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook! Ook. Ook. Ook. 
+Ook. Ook. Ook. Ook. Ook! Ook. Ook. Ook? Ook. Ook? Ook. 
+Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook? Ook. Ook. 
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook! Ook! 
+Ook? Ook! Ook? Ook. Ook! Ook. Ook. Ook? Ook. Ook? Ook. 
+Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook.
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! 
+Ook? Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook? Ook! Ook! Ook? Ook! Ook? Ook. Ook! Ook! Ook! Ook! 
+Ook! Ook! Ook! Ook. Ook? Ook. Ook? Ook. Ook? Ook. Ook? 
+Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. 
+Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! 
+Ook! Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! 
+Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook. 
+Ook? Ook. Ook? Ook. Ook. Ook! Ook. 
+	\end{lstlisting}
+	\subsection{Esolang two}
 	name
 	description
 		designer
