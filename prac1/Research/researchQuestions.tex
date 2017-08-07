@@ -169,6 +169,17 @@ Ook? Ook. Ook? Ook. Ook. Ook! Ook.
 	intended application area
 	overall syntactic structure
 	explain how these two work together
+	
+	AWK is a programming language that is primarily used for text processing, data extraction, filter, and report writer. AWK works with streams of textual data and can perform operations on data as input from files or as part of a pipeline. These operations are concerned with pattern matching, formalising data, and providing a formatted report based on the data data.
+	
+	The general syntactic structure of AWK can be seen as a set of condition-action pairs which look like the following:
+	\begin{lstlisting}
+	condition { action }
+	condition { action }
+	\end{lstlisting}
+	The conditions can be expressions, and are usually patterns. Patterns are formed with the use of regular expressions. Actions are commands or statements such as functions, calculations, or assignments. These actions are to be performed on the given data set.
+	
+	The use of regular expressions and patterns allow for textual data in the form of records and fields to be filtered, letting only the desired data remain. This is similar, in some regards, to an SQL statement that SELECTS only the fields and records that follow specific criteria. In the same way, this structure selects only particular data according to the patterns specified, and then does certain actions on that data. This is perfect for the application because one uses only the particular subset of the data to perform operations and can easily save the results of the data processing into another file. Data selection is completely separate from the data processing, so one can have different functions working on the same set of data. On the other hand, one can have one function work on many different datasets.
 
 \bibliography{mybib}{}
 \bibliographystyle{plain}
